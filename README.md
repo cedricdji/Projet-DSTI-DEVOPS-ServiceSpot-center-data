@@ -1,4 +1,4 @@
-# ETL & Data Warehouse Project README
+# ETL & Data Warehouse Project A23 DSTI
 
 ## Team Members:
 - Cedric DJIVO
