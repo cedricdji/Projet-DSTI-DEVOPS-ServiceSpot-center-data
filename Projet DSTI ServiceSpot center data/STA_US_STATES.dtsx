@@ -11,11 +11,58 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{47AE7443-507D-4965-AD0D-913F28DD8EF8}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{99E340C5-7D85-4B5D-8698-63499CB9EF54}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9F5088D8-EEC3-49D0-A0B7-04A3D406EB8B}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Administrator\Documents\Data\Data\US States.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateCD"
+              DTS:DTSID="{A6756208-FA10-407C-AD34-1A8F1285A7FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{557F731F-9F6B-42C7-9CD6-51F6C99EF528}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{4B14723C-1B31-471B-8CB2-E05F49FAFCC0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - US STATES]"
       DTS:CreationName="FLATFILE"
@@ -97,7 +144,7 @@
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1036"
+              localeId="1033"
               name="FT_SRC - US STATES"
               usesDispositions="true"
               version="1">
@@ -114,8 +161,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - US STATES\FT_SRC - US STATES.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - US STATES]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - US STATES]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -257,7 +304,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[US STATES]</property>
+                  name="OpenRowset">[dbo].[US_States]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -300,8 +347,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - US STATES\OLE_DST - US STATES.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
+                  connectionManagerID="{F1035C42-23F7-4EC5-BAF7-E2044A5F35A1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_STA]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -413,7 +460,7 @@
         <NodeLayout
           Size="171,42"
           Id="Package\DFT - US STATES"
-          TopLeft="255,48" />
+          TopLeft="194,210" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -423,13 +470,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,42"
-          Id="Package\DFT - US STATES\FT_SRC - US STATES"
-          TopLeft="193,16" />
-        <NodeLayout
           Size="200,42"
           Id="Package\DFT - US STATES\OLE_DST - US STATES"
           TopLeft="201,187" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\DFT - US STATES\FT_SRC - US STATES"
+          TopLeft="193,16" />
         <EdgeLayout
           Id="Package\DFT - US STATES.Paths[Flat File Source Output]"
           TopLeft="289,58">
