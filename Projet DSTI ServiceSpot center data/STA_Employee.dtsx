@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_cedric"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{9D3E8779-9398-4A7A-A011-4E232ABB9698}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{CD9B0126-578A-4C2D-A162-D0038C56C2F3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -538,7 +538,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{7E06F924-D1D3-4D46-867E-CEEED86CF821}"
+      DTS:DTSID="{29FB3A61-66B5-4D6F-91A3-0991917A64BA}"
       DTS:From="Package\SQL - TRUNCATE TABLE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
