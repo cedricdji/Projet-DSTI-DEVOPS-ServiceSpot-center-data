@@ -11,11 +11,23 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{A92303F9-DE48-400C-A0FE-B251B43EABEC}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{AE6560AD-2B88-4BA7-8D43-3B8C79C1AA5A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ADM_Projet_DSTI_ETL_Service_Spot]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{062C3336-64EE-476D-911E-796C3F0B1402}"
+      DTS:ObjectName="localhost.ADM_Projet_DSTI_ETL_Service_Spot">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ADM_Projet_DSTI_ETL_Service_Spot;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{062C3336-64EE-476D-911E-796C3F0B1402}localhost.ADM_Projet_DSTI_ETL_Service_Spot;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
       DTS:CreationName="OLEDB"
@@ -58,20 +70,484 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT - Charges_Call\DCNV - Charges Call"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="DCNV - Charges Call"
+              refId="Package\DFT - Charges_Call\All - Rejects"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="All - Rejects"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Year"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Year]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[Call Charges]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Charges"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Charges]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[Reject Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Reject Date"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[Reject Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Reject Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="132"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Year"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Year]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[Call Charges]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Charges"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Charges]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[Reject Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Reject Date"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[Reject Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Reject Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="132"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Year]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Charges]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Charges]"
+                      name="Call Charges" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Call Type]"
+                      name="Call Type" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      name="ErrorCode" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      name="ErrorColumn" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Reject Date]"
+                      name="Reject Date" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      length="205"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectColumn]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectColumn]"
+                      name="RejectColumn" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectDescription]"
+                      dataType="wstr"
+                      length="132"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectDescription]"
+                      name="RejectDescription" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Charges_Call\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - Charges_Call\DCNV - Charges Call.Inputs[Data Conversion Input]"
+                  refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Type ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type "
+                      lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Type ]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2018)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Charges (2018)"
+                      lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2018)]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2019)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Charges (2019)"
+                      lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2019)]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2020)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Charges (2020)"
+                      lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2020)]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2021)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Charges (2021)"
+                      lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2021)]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Charges_Call\Conditional Split.Outputs[RemoveBlankValue]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="RemoveBlankValue"
+                  synchronousInputId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Type ]} != "" &amp;&amp; #{Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2018)]} != "" &amp;&amp; #{Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2019)]} != "" &amp;&amp; #{Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2020)]} != "" &amp;&amp; #{Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2021)]} != ""</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Call Type ] != "" &amp;&amp; [Call Charges (2018)] != "" &amp;&amp; [Call Charges (2019)] != "" &amp;&amp; [Call Charges (2020)] != "" &amp;&amp; [Call Charges (2021)] != ""</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DCVN - Convert Call_Charges in numeric"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Charges Call.Inputs[Data Conversion Input].Columns[Call Charges]"
-                      cachedDataType="wstr"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Inputs[Data Conversion Input].Columns[Call Charges]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Charges"
                       lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]" />
@@ -81,20 +557,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Output]"
+                  refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\DFT - Charges_Call\DCNV - Charges Call.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Output].Columns[Call Charges int]"
-                      dataType="numeric"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Output].Columns[Call_Charges_int]"
+                      dataType="r4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Output].Columns[Call Charges int]"
-                      name="Call Charges int"
-                      precision="5"
-                      truncationRowDisposition="FailComponent">
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Output].Columns[Call_Charges_int]"
+                      name="Call_Charges_int"
+                      truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
                           containsID="true"
@@ -111,22 +586,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Error Output]"
+                  refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\DFT - Charges_Call\DCNV - Charges Call.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -135,21 +610,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Charges_Call\DCNV - Year"
+              refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
-              name="DCNV - Year"
+              name="DCVN - Convert Year in Int"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - Charges_Call\DCNV - Year.Inputs[Data Conversion Input]"
+                  refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Year.Inputs[Data Conversion Input].Columns[Year]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Inputs[Data Conversion Input].Columns[Year]"
+                      cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Year"
                       lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]" />
@@ -159,20 +633,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Output]"
+                  refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\DFT - Charges_Call\DCNV - Year.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Output].Columns[Year int]"
-                      dataType="numeric"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Output].Columns[Year_int]"
+                      dataType="ui2"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Output].Columns[Year int]"
-                      name="Year int"
-                      precision="4"
-                      truncationRowDisposition="FailComponent">
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Output].Columns[Year_int]"
+                      name="Year_int"
+                      truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
                           containsID="true"
@@ -189,22 +662,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Error Output]"
+                  refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\DFT - Charges_Call\DCNV - Year.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -213,21 +686,314 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Charges_Call\DER"
+              refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="DER"
+              name="DER - Reject Call Charges in numeric"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - Charges_Call\DER.Inputs[Derived Column Input]"
+                  refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[Reject Date]"
+                      name="Reject Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Call Charges"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Call Charges"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="132"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The Value" + (DT_WSTR,100)"Call Charges" + " is not a valid Integer"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The Value" + (DT_WSTR,100)"Call Charges" + " is not a valid Integer"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Charges_Call\DER - Reject row Year"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Reject row Year"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Charges_Call\DER - Reject row Year.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\DER.Inputs[Derived Column Input].Columns[Call Charges]"
+                      refId="Package\DFT - Charges_Call\DER - Reject row Year.Inputs[Derived Column Input].Columns[Year]"
                       cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Year"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Charges_Call\DER - Reject row Year.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[Reject Date]"
+                      name="Reject Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Year"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Year"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="132"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The Value" + (DT_WSTR,100)#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]} + " is not a valid Integer"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The Value" + (DT_WSTR,100)Year + " is not a valid Integer"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Charges_Call\DER - Reject row Year.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - REPLACE Call_Charges point par virgule"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Inputs[Derived Column Input].Columns[Call Charges]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Charges"
                       errorOrTruncationOperation="Computation"
@@ -240,13 +1006,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACE](#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]}," / min ","")</property>
+                          name="Expression">[REPLACE](#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]},".",",")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">REPLACE([Call Charges]," / min ","")</property>
+                          name="FriendlyExpression">REPLACE([Call Charges],".",",")</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -255,31 +1021,31 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Charges_Call\DER.Outputs[Derived Column Output]"
+                  refId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\DFT - Charges_Call\DER.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Inputs[Derived Column Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Charges_Call\DER.Outputs[Derived Column Error Output]"
+                  refId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\DFT - Charges_Call\DER.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DER.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\DER.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\DER.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\DER.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -288,11 +1054,87 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Charges_Call\OLE DB Destination"
+              refId="Package\DFT - Charges_Call\DER - REPLACE min"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - REPLACE min"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Charges_Call\DER - REPLACE min.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\DER - REPLACE min.Inputs[Derived Column Input].Columns[Call Charges]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Charges"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]}," / min","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE([Call Charges]," / min","")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Charges_Call\DER - REPLACE min.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Charges_Call\DER - REPLACE min.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Charges_Call\DER - REPLACE min.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Charges_Call\DER - REPLACE min.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - REPLACE min.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\DER - REPLACE min.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\DER - REPLACE min.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\DER - REPLACE min.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="OLE_DST - Call_Charges"
               usesDispositions="true"
               version="4">
               <properties>
@@ -345,7 +1187,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - Charges_Call\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
                   description="The OLE DB runtime connection used to access the database."
@@ -353,74 +1195,221 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Call Type]"
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].Columns[Call_Charges_int]"
+                      cachedDataType="r4"
+                      cachedName="Call_Charges_int"
+                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Call_Charges]"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Output].Columns[Call_Charges_int]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].Columns[Year_int]"
+                      cachedDataType="ui2"
+                      cachedName="Year_int"
+                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Output].Columns[Year_int]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].Columns[Call Type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Type"
-                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Call_Type]"
                       lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Type]" />
-                    <inputColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Year int]"
-                      cachedDataType="numeric"
-                      cachedName="Year int"
-                      cachedPrecision="4"
-                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Output].Columns[Year int]" />
-                    <inputColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Call Charges int]"
-                      cachedDataType="numeric"
-                      cachedName="Call Charges int"
-                      cachedPrecision="5"
-                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Call Charges]"
-                      lineageId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Output].Columns[Call Charges int]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Call_Charges]"
+                      dataType="numeric"
+                      name="Call_Charges"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Call_Type]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      name="Call Type" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Call Charges]"
-                      dataType="numeric"
-                      name="Call Charges"
-                      precision="5" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      dataType="numeric"
-                      name="Year"
-                      precision="4" />
+                      name="Call_Type" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Charges_Call\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST - Technical Rejects"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Technical_Rejects]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ADM_Projet_DSTI_ETL_Service_Spot]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ADM_Projet_DSTI_ETL_Service_Spot]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[Reject Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Reject Date"
+                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject Date]"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[Reject Date]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectPackageAndTask]"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="RejectColumn"
+                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectColumn]"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectColumn]" />
+                    <inputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="132"
+                      cachedName="RejectDescription"
+                      externalMetadataColumnId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDescription]"
+                      lineageId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1].Columns[RejectDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      name="Reject Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      length="205"
+                      name="RejectPackageAndTask" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectColumn]"
+                      dataType="wstr"
+                      length="12"
+                      name="RejectColumn" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDescription]"
+                      dataType="wstr"
+                      length="132"
+                      name="RejectDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -660,7 +1649,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
-                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]}</property>
+                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]}</property>
                         <property
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
@@ -680,7 +1669,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
-                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]}</property>
+                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]}</property>
                         <property
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
@@ -700,7 +1689,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
-                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]}</property>
+                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]}</property>
                         <property
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
@@ -720,7 +1709,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
-                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]}</property>
+                          name="DestinationColumn">#{Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]}</property>
                         <property
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
@@ -758,11 +1747,11 @@
                   name="Unpivot Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]"
+                      refId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]"
-                      name="Call Charges">
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]"
+                      name="Year">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -771,12 +1760,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]"
+                      refId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Year]"
-                      name="Year">
+                      lineageId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output].Columns[Call Charges]"
+                      name="Call Charges">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -806,28 +1795,63 @@
           </components>
           <paths>
             <path
+              refId="Package\DFT - Charges_Call.Paths[Data Conversion Error Output]"
+              endId="Package\DFT - Charges_Call\DER - Reject row Year.Inputs[Derived Column Input]"
+              name="Data Conversion Error Output"
+              startId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\DFT - Charges_Call.Paths[Data Conversion Error Output1]"
+              endId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Inputs[Derived Column Input]"
+              name="Data Conversion Error Output"
+              startId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Error Output]" />
+            <path
               refId="Package\DFT - Charges_Call.Paths[Data Conversion Output]"
-              endId="Package\DFT - Charges_Call\DCNV - Year.Inputs[Data Conversion Input]"
+              endId="Package\DFT - Charges_Call\OLE_DST - Call_Charges.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\DFT - Charges_Call\DCNV - Charges Call.Outputs[Data Conversion Output]" />
+              startId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - Charges_Call.Paths[Data Conversion Output1]"
-              endId="Package\DFT - Charges_Call\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Inputs[Derived Column Input]"
               name="Data Conversion Output"
-              startId="Package\DFT - Charges_Call\DCNV - Year.Outputs[Data Conversion Output]" />
+              startId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - Charges_Call.Paths[Derived Column Output]"
-              endId="Package\DFT - Charges_Call\DCNV - Charges Call.Inputs[Data Conversion Input]"
+              endId="Package\DFT - Charges_Call\DCVN - Convert Year in Int.Inputs[Data Conversion Input]"
               name="Derived Column Output"
-              startId="Package\DFT - Charges_Call\DER.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Charges_Call\DER - REPLACE min.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Charges_Call.Paths[Derived Column Output1]"
+              endId="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Charges_Call.Paths[Derived Column Output2]"
+              endId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT - Charges_Call\DER - Reject row Year.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Charges_Call.Paths[Derived Column Output3]"
+              endId="Package\DFT - Charges_Call\All - Rejects.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Charges_Call.Paths[OLE DB Source Output]"
-              endId="Package\DFT - Charges_Call\UPVT.Inputs[Unpivot Input]"
+              endId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]"
               name="OLE DB Source Output"
               startId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DFT - Charges_Call.Paths[RemoveBlankValue]"
+              endId="Package\DFT - Charges_Call\UPVT.Inputs[Unpivot Input]"
+              name="RemoveBlankValue"
+              startId="Package\DFT - Charges_Call\Conditional Split.Outputs[RemoveBlankValue]" />
+            <path
+              refId="Package\DFT - Charges_Call.Paths[Union All Output 1]"
+              endId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\DFT - Charges_Call\All - Rejects.Outputs[Union All Output 1]" />
+            <path
               refId="Package\DFT - Charges_Call.Paths[Unpivot Output]"
-              endId="Package\DFT - Charges_Call\DER.Inputs[Derived Column Input]"
+              endId="Package\DFT - Charges_Call\DER - REPLACE min.Inputs[Derived Column Input]"
               name="Unpivot Output"
               startId="Package\DFT - Charges_Call\UPVT.Outputs[Unpivot Output]" />
           </paths>
@@ -877,37 +1901,25 @@
         <NodeLayout
           Size="177,42"
           Id="Package\DFT - Charges_Call"
-          TopLeft="306,120" />
+          TopLeft="290,114" />
         <NodeLayout
           Size="242,42"
           Id="Package\SQL - Truncate table Charge Call"
           TopLeft="264,25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="385,67">
+          TopLeft="381.75,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="9.5,53"
+              EndConnector="0,47"
               Start="0,0"
-              End="9.5,45.5">
+              End="0,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="5.5,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,26.5"
-                    Point2="9.5,26.5"
-                    Point3="9.5,30.5" />
-                  <mssgle:LineSegment
-                    End="9.5,45.5" />
+                    End="0,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -923,71 +1935,189 @@
     design-time-name="Package\DFT - Charges_Call">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="228,42"
-          Id="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call"
-          TopLeft="239,2" />
+          Size="314,42"
+          Id="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule"
+          TopLeft="9,340" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT - Charges_Call\DCVN - Convert Year in Int"
+          TopLeft="62,253" />
         <NodeLayout
           Size="108,42"
           Id="Package\DFT - Charges_Call\UPVT"
-          TopLeft="270.111111111111,81.1111111111111" />
+          TopLeft="378.111111111111,104.111111111111" />
         <NodeLayout
-          Size="102,42"
-          Id="Package\DFT - Charges_Call\DER"
-          TopLeft="268.888888888889,160.666666666667" />
+          Size="228,42"
+          Id="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call"
+          TopLeft="270,4" />
         <NodeLayout
-          Size="183,42"
-          Id="Package\DFT - Charges_Call\DCNV - Charges Call"
-          TopLeft="225.333333333333,245.222222222222" />
+          Size="205,42"
+          Id="Package\DFT - Charges_Call\OLE_DST - Call_Charges"
+          TopLeft="69,565" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DFT - Charges_Call\DER - REPLACE min"
+          TopLeft="68.888888888889,172.666666666667" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\DFT - Charges_Call\Conditional Split"
+          TopLeft="81,98" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric"
+          TopLeft="30,455" />
         <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Unpivot Output]"
-          TopLeft="322,123.111111111111">
+          Id="Package\DFT - Charges_Call.Paths[Derived Column Output]"
+          TopLeft="164.194444444445,214.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,37.5555555555559"
+              EndConnector="0,38.333333333333"
               Start="0,0"
-              End="0,30.0555555555559">
+              End="0,30.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.0555555555559" />
+                    End="0,30.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Data Conversion Output1]"
+          TopLeft="166.75,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Data Conversion Output]"
+          TopLeft="171,497">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Unpivot Output]"
+          TopLeft="432.111111111111,146.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-271.222222222222,26.555555555556"
+              Start="0,0"
+              End="-271.222222222222,19.055555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.277777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.277777777778"
+                    Point2="0,13.277777777778"
+                    Point3="-4,13.277777777778" />
+                  <mssgle:LineSegment
+                    End="-267.222222222222,13.277777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-267.222222222222,13.277777777778"
+                    Point2="-271.222222222222,13.277777777778"
+                    Point3="-271.222222222222,17.277777777778" />
+                  <mssgle:LineSegment
+                    End="-271.222222222222,19.055555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[RemoveBlankValue]"
+          TopLeft="240,122.055555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="138.111111111111,0"
+              Start="0,0"
+              End="130.611111111111,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="130.611111111111,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.8642078993055,5,84.8826953125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Charges_Call.Paths[OLE DB Source Output]"
-          TopLeft="353,44">
+          TopLeft="384,46">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-28.888888888889,37.1111111111111"
+              EndConnector="-223.5,52"
               Start="0,0"
-              End="-28.888888888889,29.6111111111111">
+              End="-223.5,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5555555555556" />
+                    End="0,22" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5555555555556"
-                    Point2="0,18.5555555555556"
-                    Point3="-4,18.5555555555556" />
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
                   <mssgle:LineSegment
-                    End="-24.888888888889,18.5555555555556" />
+                    End="-219.5,26" />
                   <mssgle:CubicBezierSegment
-                    Point1="-24.888888888889,18.5555555555556"
-                    Point2="-28.888888888889,18.5555555555556"
-                    Point3="-28.888888888889,22.5555555555556" />
+                    Point1="-219.5,26"
+                    Point2="-223.5,26"
+                    Point3="-223.5,30" />
                   <mssgle:LineSegment
-                    End="-28.888888888889,29.6111111111111" />
+                    End="-223.5,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -997,19 +2127,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Derived Column Output]"
-          TopLeft="318.361111111111,202.666666666667">
+          Id="Package\DFT - Charges_Call.Paths[Derived Column Output1]"
+          TopLeft="168.25,382">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,42.555555555555"
+              EndConnector="0,73"
               Start="0,0"
-              End="0,35.055555555555">
+              End="0,65.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.055555555555" />
+                    End="0,65.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1024,41 +2154,81 @@
           FontInfo="{x:Null}"
           Size="195,40"
           Id="393379d8-426e-428e-b3ad-1b325e65ef2f"
-          TopLeft="413.333333333333,232" />
+          TopLeft="77.333333333333,494" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\DFT - Charges_Call\OLE DB Destination"
-          TopLeft="211.555555555556,393.777777777778" />
-        <NodeLayout
-          Size="143,42"
-          Id="Package\DFT - Charges_Call\DCNV - Year"
-          TopLeft="324.222222222222,337.666666666667" />
+          Size="190,42"
+          Id="Package\DFT - Charges_Call\DER - Reject row Year"
+          TopLeft="488,253" />
         <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Data Conversion Output]"
-          TopLeft="316.833333333333,287.222222222222">
+          Id="Package\DFT - Charges_Call.Paths[Data Conversion Error Output]"
+          TopLeft="273,274">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="78.888888888889,50.444444444445"
+              EndConnector="215,0"
               Start="0,0"
-              End="78.888888888889,42.944444444445">
+              End="207.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2222222222225" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.2222222222225"
-                    Point2="0,25.2222222222225"
-                    Point3="4,25.2222222222225" />
+                    End="207.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.66361328125,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="263,42"
+          Id="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric"
+          TopLeft="449,450" />
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Data Conversion Error Output1]"
+          TopLeft="311,473.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="138,0"
+              Start="0,0"
+              End="130.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="74.888888888889,25.2222222222225" />
-                  <mssgle:CubicBezierSegment
-                    Point1="74.888888888889,25.2222222222225"
-                    Point2="78.888888888889,25.2222222222225"
-                    Point3="78.888888888889,29.2222222222225" />
+                    End="130.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.836386718749992,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="138,42"
+          Id="Package\DFT - Charges_Call\All - Rejects"
+          TopLeft="511,342" />
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Derived Column Output2]"
+          TopLeft="581.5,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="78.888888888889,42.944444444445" />
+                    End="0,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1068,25 +2238,45 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Data Conversion Output1]"
-          TopLeft="324.222222222222,358.666666666667">
+          Id="Package\DFT - Charges_Call.Paths[Derived Column Output3]"
+          TopLeft="580.25,450">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-24.166666666666,35.111111111111"
+              EndConnector="0,-66"
               Start="0,0"
-              End="-24.166666666666,27.611111111111">
+              End="0,-58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-20.166666666666,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.166666666666,0"
-                    Point2="-24.166666666666,0"
-                    Point3="-24.166666666666,4" />
+                    End="0,-58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="225,42"
+          Id="Package\DFT - Charges_Call\OLE_DST - Technical Rejects"
+          TopLeft="786,343" />
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Union All Output 1]"
+          TopLeft="649,363.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="137,0"
+              Start="0,0"
+              End="129.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-24.166666666666,27.611111111111" />
+                    End="129.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1100,6 +2290,32 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Charges_Call\OLE_DST - Call_Charges">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Charges_Call\OLE_DST - Technical Rejects">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
