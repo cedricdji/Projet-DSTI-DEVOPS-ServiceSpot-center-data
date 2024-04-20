@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_Types"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{F3E775C6-E205-403F-9935-AFD3CC1DE22B}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{F4CC05F8-7CBA-45AD-9B21-99B792938E48}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -427,37 +427,25 @@
         <NodeLayout
           Size="162,42"
           Id="Package\DFT - Call Types"
-          TopLeft="185,181" />
+          TopLeft="165,248" />
         <NodeLayout
           Size="170,42"
           Id="Package\SQL - TRUNCATE TABLE"
           TopLeft="166,51" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="251,93">
+          TopLeft="248.5,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15,88"
+              EndConnector="0,155"
               Start="0,0"
-              End="15,80.5">
+              End="0,147.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,40"
-                    Point2="0,44"
-                    Point3="4,44" />
-                  <mssgle:LineSegment
-                    End="11,44" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11,44"
-                    Point2="15,44"
-                    Point3="15,48" />
-                  <mssgle:LineSegment
-                    End="15,80.5" />
+                    End="0,147.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

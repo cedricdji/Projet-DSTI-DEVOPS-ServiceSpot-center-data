@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{99E340C5-7D85-4B5D-8698-63499CB9EF54}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{1BF1B74A-58E7-42F6-B589-788B6064F960}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -140,12 +140,12 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT - US STATES\FT_SRC - US STATES"
+              refId="Package\DFT - US STATES\FF_SRC - US STATES"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="FT_SRC - US STATES"
+              name="FF_SRC - US STATES"
               usesDispositions="true"
               version="1">
               <properties>
@@ -160,25 +160,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - US STATES\FT_SRC - US STATES.Connections[FlatFileConnection]"
+                  refId="Package\DFT - US STATES\FF_SRC - US STATES.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
                   connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output]"
+                  refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[StateCD]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[StateCD]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[StateCD]"
+                      externalMetadataColumnId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[StateCD]"
                       length="255"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[StateCD]"
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[StateCD]"
                       name="StateCD"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -193,14 +193,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[Name]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[Name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      externalMetadataColumnId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Name]"
                       length="255"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[Name]"
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[Name]"
                       name="Name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -215,14 +215,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[Region]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[Region]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      externalMetadataColumnId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Region]"
                       length="255"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[Region]"
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[Region]"
                       name="Region"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -240,19 +240,19 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[StateCD]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[StateCD]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="StateCD" />
                     <externalMetadataColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Name]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="Name" />
                     <externalMetadataColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Region]"
                       codePage="1252"
                       dataType="str"
                       length="255"
@@ -260,27 +260,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Error Output]"
+                  refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -367,7 +367,7 @@
                       cachedLength="255"
                       cachedName="StateCD"
                       externalMetadataColumnId="Package\DFT - US STATES\OLE_DST - US STATES.Inputs[OLE DB Destination Input].ExternalColumns[StateCD]"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[StateCD]" />
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[StateCD]" />
                     <inputColumn
                       refId="Package\DFT - US STATES\OLE_DST - US STATES.Inputs[OLE DB Destination Input].Columns[Name]"
                       cachedCodepage="1252"
@@ -375,7 +375,7 @@
                       cachedLength="255"
                       cachedName="Name"
                       externalMetadataColumnId="Package\DFT - US STATES\OLE_DST - US STATES.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[Name]" />
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[Name]" />
                     <inputColumn
                       refId="Package\DFT - US STATES\OLE_DST - US STATES.Inputs[OLE DB Destination Input].Columns[Region]"
                       cachedCodepage="1252"
@@ -383,7 +383,7 @@
                       cachedLength="255"
                       cachedName="Region"
                       externalMetadataColumnId="Package\DFT - US STATES\OLE_DST - US STATES.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
-                      lineageId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].Columns[Region]" />
+                      lineageId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output].Columns[Region]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -439,7 +439,7 @@
               refId="Package\DFT - US STATES.Paths[Flat File Source Output]"
               endId="Package\DFT - US STATES\OLE_DST - US STATES.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output]" />
+              startId="Package\DFT - US STATES\FF_SRC - US STATES.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -460,7 +460,7 @@
         <NodeLayout
           Size="171,42"
           Id="Package\DFT - US STATES"
-          TopLeft="194,210" />
+          TopLeft="116,233" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -475,7 +475,7 @@
           TopLeft="201,187" />
         <NodeLayout
           Size="192,42"
-          Id="Package\DFT - US STATES\FT_SRC - US STATES"
+          Id="Package\DFT - US STATES\FF_SRC - US STATES"
           TopLeft="193,16" />
         <EdgeLayout
           Id="Package\DFT - US STATES.Paths[Flat File Source Output]"

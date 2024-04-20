@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_cedric"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{CD9B0126-578A-4C2D-A162-D0038C56C2F3}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{ECA788EF-22E9-4D96-BA2E-46D48878E049}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -559,37 +559,25 @@
         <NodeLayout
           Size="159,42"
           Id="Package\DFT - Employee"
-          TopLeft="211,207" />
+          TopLeft="231,227" />
         <NodeLayout
           Size="208,42"
           Id="Package\SQL - TRUNCATE TABLE"
           TopLeft="205,85" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="309,127">
+          TopLeft="309.75,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-18.5,80"
+              EndConnector="0,100"
               Start="0,0"
-              End="-18.5,72.5">
+              End="0,92.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36"
-                    Point2="0,40"
-                    Point3="-4,40" />
-                  <mssgle:LineSegment
-                    End="-14.5,40" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14.5,40"
-                    Point2="-18.5,40"
-                    Point3="-18.5,44" />
-                  <mssgle:LineSegment
-                    End="-18.5,72.5" />
+                    End="0,92.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
