@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{4C84F600-4145-4BCE-B69E-0584E3B3A5E7}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{468B3039-C689-4BF9-8BB7-3D0B15CC5393}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1976,62 +1976,62 @@ where [refTable].[StateCD] = ?</property>
         <NodeLayout
           Size="213,42"
           Id="Package\DFT - ODS Employee\OLE_SRC - STA Employee"
-          TopLeft="68,29" />
+          TopLeft="68,174" />
         <NodeLayout
           Size="267,42"
           Id="Package\DFT - ODS Employee\DCNV - Manager LastName into string"
-          TopLeft="56,343" />
+          TopLeft="56,488" />
         <NodeLayout
           Size="208,42"
           Id="Package\DFT - ODS Employee\DER - Manager LastName"
-          TopLeft="1035,32" />
+          TopLeft="1035,177" />
         <NodeLayout
           Size="214,42"
           Id="Package\DFT - ODS Employee\DER - Add StateCD column"
-          TopLeft="1268,35" />
+          TopLeft="1268,180" />
         <NodeLayout
           Size="267,42"
           Id="Package\DFT - ODS Employee\DCNV - Manager FirstName into string"
-          TopLeft="59,268" />
+          TopLeft="59,413" />
         <NodeLayout
           Size="209,42"
           Id="Package\DFT - ODS Employee\DER - Manager FirstName"
-          TopLeft="796,31" />
+          TopLeft="796,176" />
         <NodeLayout
           Size="214,42"
           Id="Package\DFT - ODS Employee\DCNV - StateCD into String"
-          TopLeft="85,424" />
+          TopLeft="85,569" />
         <NodeLayout
           Size="272,42"
           Id="Package\DFT - ODS Employee\DCNV - Employee LastName into string"
-          TopLeft="55,182" />
+          TopLeft="55,327" />
         <NodeLayout
           Size="214,42"
           Id="Package\DFT - ODS Employee\DER - Employee LastName"
-          TopLeft="556.888888888889,32" />
+          TopLeft="556.888888888889,177" />
         <NodeLayout
           Size="211,42"
           Id="Package\DFT - ODS Employee\OLE_DST- ODS Employee"
-          TopLeft="770,505" />
+          TopLeft="770,650" />
         <NodeLayout
           Size="206,42"
           Id="Package\DFT - ODS Employee\DCNV - Resizing columns"
-          TopLeft="453.5,502.5" />
+          TopLeft="453.5,647.5" />
         <NodeLayout
           Size="151,42"
           Id="Package\DFT - ODS Employee\LKP - StateCD"
-          TopLeft="109.5,508.5" />
+          TopLeft="109.5,653.5" />
         <NodeLayout
           Size="273,42"
           Id="Package\DFT - ODS Employee\DCNV - Employee FirstName into string"
-          TopLeft="51,105" />
+          TopLeft="51,250" />
         <NodeLayout
           Size="214,42"
           Id="Package\DFT - ODS Employee\DER - Employee FirstName"
-          TopLeft="313,34.1111111111111" />
+          TopLeft="313,179.111111111111" />
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[OLE DB Source Output]"
-          TopLeft="281,52.5555555555555">
+          TopLeft="281,197.555555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2053,7 +2053,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Lookup Match Output]"
-          TopLeft="260.5,526.5">
+          TopLeft="260.5,671.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2077,7 +2077,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Derived Column Output4]"
-          TopLeft="1375,77">
+          TopLeft="1375,222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2111,7 +2111,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Derived Column Output3]"
-          TopLeft="1243,54.5">
+          TopLeft="1243,199.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2133,7 +2133,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Derived Column Output2]"
-          TopLeft="1005,52.5">
+          TopLeft="1005,197.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2155,7 +2155,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Derived Column Output1]"
-          TopLeft="770.888888888889,52.5">
+          TopLeft="770.888888888889,197.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2177,7 +2177,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Derived Column Output]"
-          TopLeft="527,54.0555555555555">
+          TopLeft="527,199.055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2199,7 +2199,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Data Conversion Output5]"
-          TopLeft="190.75,385">
+          TopLeft="190.75,530">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2221,7 +2221,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Data Conversion Output4]"
-          TopLeft="191,310">
+          TopLeft="191,455">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2243,7 +2243,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Data Conversion Output3]"
-          TopLeft="191.75,224">
+          TopLeft="191.75,369">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2265,7 +2265,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Data Conversion Output2]"
-          TopLeft="189.25,147">
+          TopLeft="189.25,292">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2287,7 +2287,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Data Conversion Output1]"
-          TopLeft="659.5,524.75">
+          TopLeft="659.5,669.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2311,7 +2311,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Data Conversion Output]"
-          TopLeft="188.5,466">
+          TopLeft="188.5,611">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2331,6 +2331,27 @@ where [refTable].[StateCD] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Add 5 new columns: &#xD;&#xA;-empFN/EmpLN by splitting the Emp column&#xD;&#xA;-manFN/ManLN by splitting the Manager column&#xD;&#xA;-stateCD by extracting two last letters from Site column"
+          ParentId="Package\DFT - ODS Employee"
+          FontInfo="{assembly:Null}"
+          Size="322,88"
+          Id="f7a97fb6-16a5-4a17-8bb9-2eb75cfc238b"
+          TopLeft="416,82" />
+        <AnnotationLayout
+          Text="Convert the 5 new columns into string : &#xA;-empFN/EmpLN &#xA;-manFN/ManLN &#xA;-stateCD "
+          ParentId="Package\DFT - ODS Employee"
+          FontInfo="{assembly:Null}"
+          Size="240,88"
+          Id="aff365f2-9a0b-4686-9a55-e6491ed16c80"
+          TopLeft="409,377" />
+        <AnnotationLayout
+          Text="Right join with the US state table to add the Region and state column"
+          ParentId="Package\DFT - ODS Employee"
+          FontInfo="{assembly:Null}"
+          Size="396,40"
+          Id="8435fcda-726d-4e2c-a149-26ccb3c9f9e8"
+          TopLeft="176,614.5" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
