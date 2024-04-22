@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_Types"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F4CC05F8-7CBA-45AD-9B21-99B792938E48}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{EA45A871-1074-454B-AD21-2E9CD6F5DF06}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49,44 +49,6 @@
               DTS:TextQualified="True"
               DTS:ObjectName="CallTypeLabel"
               DTS:DTSID="{DE635181-8472-4F61-BC35-F7445328C126}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - Call Types]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{FD704004-20C3-41C9-93E0-D02FDA3CC01F}"
-      DTS:ObjectName="Flat File Connection Manager - Projet DSTI ETL - Call Types">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1036"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Administrator\Documents\Projet-DSTI-2023-ETL-DWH\Data\Call Types.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CallTypeID"
-              DTS:DTSID="{9809DBB1-A35D-4D4A-B70D-72ACCF9BB840}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CallTypeLabel"
-              DTS:DTSID="{64B8A095-0684-4FE9-8240-5F617108ECAA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -465,25 +427,25 @@
         <NodeLayout
           Size="191,42"
           Id="Package\DFT - Call Types\OLE_DST - Call Types"
-          TopLeft="215,122" />
+          TopLeft="219,192" />
         <NodeLayout
           Size="183,42"
           Id="Package\DFT - Call Types\FF_SRC - Call Types"
           TopLeft="222,38" />
         <EdgeLayout
           Id="Package\DFT - Call Types.Paths[Flat File Source Output]"
-          TopLeft="312,80">
+          TopLeft="314,80">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,112"
               Start="0,0"
-              End="0,34.5">
+              End="0,104.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,104.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

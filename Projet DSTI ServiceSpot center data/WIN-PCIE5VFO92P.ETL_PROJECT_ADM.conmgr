@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WIN-PCIE5VFO92P.ETL_PROJECT_ADM"
+  DTS:DTSID="{223BD390-DB50-4AD7-B2DA-866DF2291E1C}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=WIN-PCIE5VFO92P;Initial Catalog=ETL_PROJECT_ADM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call Charges-{223BD390-DB50-4AD7-B2DA-866DF2291E1C}WIN-PCIE5VFO92P.ETL_PROJECT_ADM;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

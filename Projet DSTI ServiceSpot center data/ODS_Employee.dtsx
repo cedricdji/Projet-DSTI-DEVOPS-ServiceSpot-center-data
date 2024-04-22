@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{468B3039-C689-4BF9-8BB7-3D0B15CC5393}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{52550B09-3DAC-4F2D-BF09-2D6387EB420B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

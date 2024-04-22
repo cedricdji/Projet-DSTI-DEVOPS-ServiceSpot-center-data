@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_Call_Data"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{AF65A1CA-0BAB-46F5-A286-C4EA4AF76BDC}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{67991E3C-6CBA-4D7C-9D94-4C2A1AA31D73}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -399,11 +399,11 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data"
+                  refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE_DST - Call Data"
+                  name="OLE_DST - STA Call Data"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -456,7 +456,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Connections[OleDbConnection]"
+                      refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Connections[OleDbConnection]"
                       connectionManagerID="{F1035C42-23F7-4EC5-BAF7-E2044A5F35A1}:external"
                       connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_STA]"
                       description="The OLE DB runtime connection used to access the database."
@@ -464,95 +464,95 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input]"
+                      refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].Columns[CallTimestamp]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].Columns[CallTimestamp]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="CallTimestamp"
-                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
                           lineageId="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files.Outputs[Flat File Source Output].Columns[CallTimestamp]" />
                         <inputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].Columns[Call Type]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].Columns[Call Type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="Call Type"
-                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
                           lineageId="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files.Outputs[Flat File Source Output].Columns[Call Type]" />
                         <inputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="EmployeeID"
-                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           lineageId="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files.Outputs[Flat File Source Output].Columns[EmployeeID]" />
                         <inputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].Columns[CallDuration]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].Columns[CallDuration]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="CallDuration"
-                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
                           lineageId="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files.Outputs[Flat File Source Output].Columns[CallDuration]" />
                         <inputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].Columns[WaitTime]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].Columns[WaitTime]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="WaitTime"
-                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
                           lineageId="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files.Outputs[Flat File Source Output].Columns[WaitTime]" />
                         <inputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="CallAbandoned"
-                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          externalMetadataColumnId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
                           lineageId="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files.Outputs[Flat File Source Output].Columns[CallAbandoned]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="CallTimestamp" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="Call Type" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="EmployeeID" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="CallDuration" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="WaitTime" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
                           codePage="1252"
                           dataType="str"
                           length="255"
@@ -562,22 +562,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -589,7 +589,7 @@
               <paths>
                 <path
                   refId="Package\FELC - Call Data Files\DFT - Call Data.Paths[Flat File Source Output]"
-                  endId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data.Inputs[OLE DB Destination Input]"
+                  endId="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data.Inputs[OLE DB Destination Input]"
                   name="Flat File Source Output"
                   startId="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files.Outputs[Flat File Source Output]" />
               </paths>
@@ -658,35 +658,23 @@
           Id="Package\FELC - Call Data Files"
           TopLeft="189,232" />
         <NodeLayout
-          Size="170,42"
+          Size="208,42"
           Id="Package\SQL - TRUNCATE TABLE"
           TopLeft="199,21.6666666666667" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="284,63.6666666666667">
+          TopLeft="302.5,63.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18,168.333333333333"
+              EndConnector="0,168.333333333333"
               Start="0,0"
-              End="18,160.833333333333">
+              End="0,160.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,80.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,80.1666666666667"
-                    Point2="0,84.1666666666667"
-                    Point3="4,84.1666666666667" />
-                  <mssgle:LineSegment
-                    End="14,84.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14,84.1666666666667"
-                    Point2="18,84.1666666666667"
-                    Point3="18,88.1666666666667" />
-                  <mssgle:LineSegment
-                    End="18,160.833333333333" />
+                    End="0,160.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -702,18 +690,18 @@
     design-time-name="Package\FELC - Call Data Files\DFT - Call Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="203,42"
           Id="Package\FELC - Call Data Files\DFT - Call Data\FF_SRC - Call Data Files"
           TopLeft="217,85" />
         <NodeLayout
-          Size="184,42"
-          Id="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data"
+          Size="208,42"
+          Id="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data"
           TopLeft="222,376" />
         <EdgeLayout
           Id="Package\FELC - Call Data Files\DFT - Call Data.Paths[Flat File Source Output]"
-          TopLeft="316.25,127">
+          TopLeft="322.25,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -730,14 +718,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-27.8544140625,115.1357421875,55.708828125,11.228515625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - Call Data">
+    design-time-name="Package\FELC - Call Data Files\DFT - Call Data\OLE_DST - STA Call Data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

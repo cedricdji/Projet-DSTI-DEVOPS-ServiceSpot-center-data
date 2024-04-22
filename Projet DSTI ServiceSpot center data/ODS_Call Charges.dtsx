@@ -11,24 +11,10 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Call Charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{19E60C11-A90F-47E0-9390-FEA9F38124DC}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{60F0D1FF-5DE4-4F7D-A6F4-FF4AF7F6EEC9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_ADM]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{223BD390-DB50-4AD7-B2DA-866DF2291E1C}"
-      DTS:ObjectName="WIN-PCIE5VFO92P.ETL_PROJECT_ADM">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WIN-PCIE5VFO92P;Initial Catalog=ETL_PROJECT_ADM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Call Charges-{223BD390-DB50-4AD7-B2DA-866DF2291E1C}WIN-PCIE5VFO92P.ETL_PROJECT_ADM;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -1249,8 +1235,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - ODS Call Charges\OLE_DST - ADM Rejects.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_ADM]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_ADM]"
+                  connectionManagerID="{223BD390-DB50-4AD7-B2DA-866DF2291E1C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_ADM]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1934,7 +1920,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{F3DF0CAE-2549-4B3F-AC67-65A6B661FCD2}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Call_Charges" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.CallCharges" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2329,7 +2315,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,24,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

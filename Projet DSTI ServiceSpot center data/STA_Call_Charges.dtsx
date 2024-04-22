@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{5B28DA04-2983-4B1B-9F3D-04ED424987D4}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{3B0324B5-4F24-42D3-BEA3-821737CECA7E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -76,71 +76,6 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Call Charges (2021)"
               DTS:DTSID="{96E90E7E-2491-4156-880C-D31FABD25A93}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - Call Charges]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{BC15B2B1-7869-4D6F-A026-EABCB31A02A2}"
-      DTS:ObjectName="Flat File Connection Manager - Projet DSTI ETL - Call Charges">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1036"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Administrator\Documents\Projet-DSTI-2023-ETL-DWH\Data\Call Charges.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Call Type "
-              DTS:DTSID="{5EC7B43D-0AC9-4068-B4A6-74535DC3AD9A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Call Charges (2018)"
-              DTS:DTSID="{91DEBEDE-D958-4E02-B8BF-3EA156431FC9}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Call Charges (2019)"
-              DTS:DTSID="{35017D61-A647-468C-9E4C-7C983922489C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Call Charges (2020)"
-              DTS:DTSID="{EC570A90-01C4-4856-BA64-A3E013891A0D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Call Charges (2021)"
-              DTS:DTSID="{04107F93-AFED-4C75-99FF-10546153939A}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
