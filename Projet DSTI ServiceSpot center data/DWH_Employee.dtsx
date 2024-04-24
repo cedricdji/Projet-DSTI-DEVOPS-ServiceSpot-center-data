@@ -11,24 +11,10 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DWH_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{2C4E8163-B867-429E-9A6A-98626B5864E9}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{455C30E0-450E-4ACC-98C8-D7E37D8D11A6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}"
-      DTS:ObjectName="WIN-PCIE5VFO92P.ETL_PROJECT_DWH">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WIN-PCIE5VFO92P;Initial Catalog=ETL_PROJECT_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DWH_Employee-{DCE695A7-0D55-4C98-A6BF-073609EEAC23}WIN-PCIE5VFO92P.ETL_PROJECT_DWH;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -83,8 +69,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
+                  connectionManagerID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -435,8 +421,8 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
               <connections>
                 <connection
                   refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
+                  connectionManagerID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -758,8 +744,8 @@ where [refTable].[EmployeeID] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT - DimEmployee\LKP - EmployeeID.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
+                  connectionManagerID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -890,8 +876,8 @@ where [refTable].[EmployeeID] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT - DimEmployee\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
+                  connectionManagerID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1486,7 +1472,7 @@ where [refTable].[EmployeeID] = ?</property>
         <NodeLayout
           Size="178,42"
           Id="Package\DFT - DimEmployee"
-          TopLeft="343,128" />
+          TopLeft="242,187" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1494,29 +1480,51 @@ where [refTable].[EmployeeID] = ?</property>
     design-time-name="Package\DFT - DimEmployee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="216,42"
-          Id="Package\DFT - DimEmployee\OLE_SRC - ODS Employee"
-          TopLeft="113,45" />
-        <AnnotationLayout
-          Text="1 - From data source ODS Employee"
-          ParentId="Package\DFT - DimEmployee"
-          FontInfo="{assembly:Null}"
-          Size="221,60"
-          Id="e0affb6d-ffee-4c61-a214-caf725a9467f"
-          TopLeft="331,45" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="205,42"
           Id="Package\DFT - DimEmployee\LKP - EmployeeID"
           TopLeft="119,169" />
-        <AnnotationLayout
-          Text="2 - See if Employee ID already exist in the destination DWH Employee"
-          ParentId="Package\DFT - DimEmployee"
-          FontInfo="{assembly:Null}"
-          Size="396,60"
-          Id="654787fb-0e77-4e0f-84b7-73c1e60faa2e"
-          TopLeft="92,208" />
+        <NodeLayout
+          Size="265,42"
+          Id="Package\DFT - DimEmployee\LKP - Changes on existing employees"
+          TopLeft="569,167" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\DFT - DimEmployee\OLE_SRC - ODS Employee"
+          TopLeft="113,45" />
+        <NodeLayout
+          Size="325,42"
+          Id="Package\DFT - DimEmployee\CMD - Update existing records with latest changes"
+          TopLeft="1069,161" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DFT - DimEmployee\OLE DB Destination"
+          TopLeft="137,387" />
+        <EdgeLayout
+          Id="Package\DFT - DimEmployee.Paths[Lookup Match Output]"
+          TopLeft="324,189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="245,0"
+              Start="0,0"
+              End="237.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="237.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.55861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - DimEmployee.Paths[OLE DB Source Output]"
           TopLeft="221.25,87">
@@ -1539,10 +1547,30 @@ where [refTable].[EmployeeID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DFT - DimEmployee\OLE DB Destination"
-          TopLeft="137,387" />
+        <EdgeLayout
+          Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output1]"
+          TopLeft="834,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="235,0"
+              Start="0,0"
+              End="227.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="227.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="57.94361328125,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output]"
           TopLeft="223.5,211">
@@ -1568,80 +1596,38 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="3 - If Employee ID does not exist in the datawarehouse &#xD;&#xA;( meaning there is no match found ie. it is a new Employee),&#xD;&#xA;it is directly added to the warehouse"
+          Text="1 - From data source ODS Employee"
+          ParentId="Package\DFT - DimEmployee"
+          FontInfo="{assembly:Null}"
+          Size="221,40"
+          Id="e0affb6d-ffee-4c61-a214-caf725a9467f"
+          TopLeft="331,45" />
+        <AnnotationLayout
+          Text="2 - See if Employee ID already exist in the destination DWH Employee"
+          ParentId="Package\DFT - DimEmployee"
+          FontInfo="{assembly:Null}"
+          Size="396,40"
+          Id="654787fb-0e77-4e0f-84b7-73c1e60faa2e"
+          TopLeft="92,208" />
+        <AnnotationLayout
+          Text="3 - If Employee ID does not exist in the datawarehouse &#xA;( meaning there is no match found ie. it is a new Employee),&#xA;it is directly added to the warehouse"
           ParentId="Package\DFT - DimEmployee"
           FontInfo="{assembly:Null}"
           Size="345,72"
           Id="c8127c2a-5eb5-489f-bde8-353a1056848f"
           TopLeft="326,375" />
-        <NodeLayout
-          Size="265,42"
-          Id="Package\DFT - DimEmployee\LKP - Changes on existing employees"
-          TopLeft="569,167" />
-        <EdgeLayout
-          Id="Package\DFT - DimEmployee.Paths[Lookup Match Output]"
-          TopLeft="324,189">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="245,0"
-              Start="0,0"
-              End="237.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="237.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="70.55861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <AnnotationLayout
-          Text="4 - If the EmployeeID is found, then the employee already exist in the DWH&#xD;&#xA;So we now have to verify if there was any change in the employee information &#xD;&#xA;&#xD;&#xA;We compare each column from ODS Employee to its matching column in DWH Employee"
+          Text="4 - If the EmployeeID is found, then the employee already exist in the DWH&#xA;So we now have to verify if there was any change in the employee information &#xA;&#xA;We compare each column from ODS Employee to its matching column in DWH Employee"
           ParentId="Package\DFT - DimEmployee"
           FontInfo="{assembly:Null}"
           Size="502,88"
           Id="64f4a69d-e62a-4574-8e6d-8c028f0e1eae"
           TopLeft="518,215" />
-        <NodeLayout
-          Size="325,42"
-          Id="Package\DFT - DimEmployee\CMD - Update existing records with latest changes"
-          TopLeft="1069,161" />
-        <EdgeLayout
-          Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output1]"
-          TopLeft="834,185">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="235,0"
-              Start="0,0"
-              End="227.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="227.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="57.94361328125,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <AnnotationLayout
-          Text="5 - If any mismatching values are found between two column for an employee meaning that a change occured on the employee info, &#xD;&#xA;then the employee row need to be updated with the new information. "
+          Text="5 - If any mismatching values are found between two column for an employee meaning that a change occured on the employee info, &#xA;then the employee row need to be updated with the new information. "
           ParentId="Package\DFT - DimEmployee"
           FontInfo="{assembly:Null}"
-          Size="735,60"
+          Size="735,56"
           Id="85363532-2191-4118-8681-f5b23eec7aa1"
           TopLeft="1006,87" />
       </GraphLayout>
@@ -1661,12 +1647,12 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - DimEmployee\LKP - EmployeeID">
+    design-time-name="Package\DFT - DimEmployee\LKP - Changes on existing employees">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1676,7 +1662,7 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1697,12 +1683,12 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - DimEmployee\LKP - Changes on existing employees">
+    design-time-name="Package\DFT - DimEmployee\LKP - EmployeeID">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1712,7 +1698,7 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
