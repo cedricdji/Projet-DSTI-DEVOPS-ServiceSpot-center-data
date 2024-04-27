@@ -11,16 +11,16 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{47AE7443-507D-4965-AD0D-913F28DD8EF8}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{A6F20B3F-AC67-4755-ADC1-B5B12C6BA465}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - US STATES]"
+      DTS:refId="Package.ConnectionManagers[Flat File Connection  - US_STATES]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{7F739D22-CCC4-435B-A793-AC4243FF3675}"
-      DTS:ObjectName="Flat File Connection Manager - Projet DSTI ETL - US STATES">
+      DTS:DTSID="{C13CB39B-CAF5-4840-86DF-49520256A88F}"
+      DTS:ObjectName="Flat File Connection  - US_STATES">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,34 +30,34 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Administrator\Documents\Projet-DSTI-2023-ETL-DWH\Data\US States.csv">
+          DTS:ConnectionString="C:\Users\Administrator\Documents\Projet-DSTI-2023-ETL-DWH\Projet DSTI ServiceSpot center data\Data\US States.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="255"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="StateCD"
-              DTS:DTSID="{12A92C7D-EB08-4FA0-BBF7-3CF1443CB58D}"
+              DTS:DTSID="{3FE4E763-3B66-4CF8-B012-F2EE8583EFE1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="255"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Name"
-              DTS:DTSID="{7DB4824D-4109-4EBC-8B7F-58356F192EBD}"
+              DTS:DTSID="{54129E77-1155-46D5-B48B-2167A7566BBE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="255"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{03A9C4C5-B9E2-4A37-AA62-B1ECDFED1A6E}"
+              DTS:DTSID="{730A4FB9-4078-4F86-B473-89C0B06D6139}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -114,8 +114,8 @@
               <connections>
                 <connection
                   refId="Package\DFT - US STATES\FT_SRC - US STATES.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - US STATES]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager - Projet DSTI ETL - US STATES]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection  - US_STATES]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection  - US_STATES]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -196,19 +196,19 @@
                       refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[StateCD]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="StateCD" />
                     <externalMetadataColumn
                       refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Name]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Name" />
                     <externalMetadataColumn
                       refId="Package\DFT - US STATES\FT_SRC - US STATES.Outputs[Flat File Source Output].ExternalColumns[Region]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="Region" />
                   </externalMetadataColumns>
                 </output>
@@ -257,7 +257,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[US STATES]</property>
+                  name="OpenRowset">[dbo].[US_STATES]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -397,7 +397,34 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{36A1B861-B3DA-4E95-9994-C01DBB16CBEC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5084931F-6E92-4D63-8067-2D19F817C014}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.US_STATES" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4F98791B-93F7-446D-8FBF-BC56284CB171}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT - US STATES" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -409,11 +436,49 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT - US STATES"
-          TopLeft="255,48" />
+          TopLeft="268,130" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="256,25" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="341,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,63"
+              Start="0,0"
+              End="12.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="8.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,31.5"
+                    Point2="12.5,31.5"
+                    Point3="12.5,35.5" />
+                  <mssgle:LineSegment
+                    End="12.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -423,39 +488,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,42"
-          Id="Package\DFT - US STATES\FT_SRC - US STATES"
-          TopLeft="193,16" />
-        <NodeLayout
           Size="200,42"
           Id="Package\DFT - US STATES\OLE_DST - US STATES"
-          TopLeft="201,187" />
+          TopLeft="185,88" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\DFT - US STATES\FT_SRC - US STATES"
+          TopLeft="194,16" />
         <EdgeLayout
           Id="Package\DFT - US STATES.Paths[Flat File Source Output]"
-          TopLeft="289,58">
+          TopLeft="287.5,58">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12,129"
+              EndConnector="0,30"
               Start="0,0"
-              End="12,121.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60.5"
-                    Point2="0,64.5"
-                    Point3="4,64.5" />
-                  <mssgle:LineSegment
-                    End="8,64.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8,64.5"
-                    Point2="12,64.5"
-                    Point3="12,68.5" />
-                  <mssgle:LineSegment
-                    End="12,121.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

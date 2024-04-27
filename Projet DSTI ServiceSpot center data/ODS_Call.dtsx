@@ -1,0 +1,3082 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/27/2024 9:15:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-E63SU2KDKAG"
+  DTS:CreatorName="WIN-E63SU2KDKAG\Administrator"
+  DTS:DTSID="{AA3C0614-15D3-4387-AE95-8168EF212231}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{677C06C2-22C7-4212-899B-6DE75FC923B3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ADM_Projet_DSTI_ETL_Service_Spot]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{062C3336-64EE-476D-911E-796C3F0B1402}"
+      DTS:ObjectName="localhost.ADM_Projet_DSTI_ETL_Service_Spot">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ADM_Projet_DSTI_ETL_Service_Spot;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{062C3336-64EE-476D-911E-796C3F0B1402}localhost.ADM_Projet_DSTI_ETL_Service_Spot;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C4652761-057D-47AB-AF06-13A768883C47}"
+      DTS:ObjectName="localhost.ODS_Projet_DSTI_ETL_Service_Spot">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ODS_Projet_DSTI_ETL_Service_Spot;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C4652761-057D-47AB-AF06-13A768883C47}localhost.ODS_Projet_DSTI_ETL_Service_Spot;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8744EE75-F2A9-4C58-9A0E-6F40A9241A3D}"
+      DTS:ObjectName="localhost.STA_Projet_DSTI_ETL_Service_Spot">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=STA_Projet_DSTI_ETL_Service_Spot;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{8744EE75-F2A9-4C58-9A0E-6F40A9241A3D}localhost.STA_Projet_DSTI_ETL_Service_Spot;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - Call"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{48340175-49B5-4192-B6AD-CB394DCE4458}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Call"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Call\ALL- Rejects"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="ALL- Rejects"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallTimestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallTimestamp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallTimestamp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[EmployeeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallDuration]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallDuration]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[WaitTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[WaitTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallAbandoned]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallAbandoned"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallAbandoned]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallAbandoned]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[Id_file]"
+                      cachedDataType="wstr"
+                      cachedLength="260"
+                      cachedName="Id_file"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Id_file]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Id_file]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallTimestamp_DCVN]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_DCVN"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallTimestamp_DCVN]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallYear]"
+                      cachedDataType="i4"
+                      cachedName="CallYear"
+                      lineageId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Output].Columns[CallYear]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallYear]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallMonth]"
+                      cachedDataType="i4"
+                      cachedName="CallMonth"
+                      lineageId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Output].Columns[CallMonth]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallMonth]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallDay]"
+                      cachedDataType="i4"
+                      cachedName="CallDay"
+                      lineageId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Output].Columns[CallDay]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallDay]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallHour]"
+                      cachedDataType="i4"
+                      cachedName="CallHour"
+                      lineageId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Output].Columns[CallHour]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallHour]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[CallMinute]"
+                      cachedDataType="i4"
+                      cachedName="CallMinute"
+                      lineageId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Output].Columns[CallMinute]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallMinute]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[DayOfWeek]"
+                      cachedDataType="i4"
+                      cachedName="DayOfWeek"
+                      lineageId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Output].Columns[DayOfWeek]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[DayOfWeek]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[Reject Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Reject Date"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[Reject Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Reject Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="7"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[CallTimestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallTimestamp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallTimestamp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Call Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Call Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[EmployeeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallDuration]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallDuration]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[WaitTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[WaitTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[CallAbandoned]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallAbandoned"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallAbandoned]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallAbandoned]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[Id_file]"
+                      cachedDataType="wstr"
+                      cachedLength="260"
+                      cachedName="Id_file"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Id_file]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Id_file]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[Reject Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Reject Date"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[Reject Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Reject Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="129"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallTimestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallTimestamp]"
+                      name="CallTimestamp" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Call Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Call Type]"
+                      name="Call Type" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallDuration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallDuration]"
+                      name="CallDuration" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[WaitTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[WaitTime]"
+                      name="WaitTime" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallAbandoned]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallAbandoned]"
+                      name="CallAbandoned" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Id_file]"
+                      dataType="wstr"
+                      length="260"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Id_file]"
+                      name="Id_file" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallTimestamp_DCVN]"
+                      dataType="date"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallTimestamp_DCVN]"
+                      name="CallTimestamp_DCVN" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallYear]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallYear]"
+                      name="CallYear" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallMonth]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallMonth]"
+                      name="CallMonth" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallDay]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallDay]"
+                      name="CallDay" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallHour]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallHour]"
+                      name="CallHour" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallMinute]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[CallMinute]"
+                      name="CallMinute" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[DayOfWeek]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[DayOfWeek]"
+                      name="DayOfWeek" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      name="ErrorCode" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      name="ErrorColumn" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Reject Date]"
+                      name="Reject Date" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      length="205"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectColumn]"
+                      dataType="wstr"
+                      length="13"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectColumn]"
+                      name="RejectColumn" />
+                    <outputColumn
+                      refId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectDescription]"
+                      dataType="wstr"
+                      length="129"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectDescription]"
+                      name="RejectDescription" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DCVN - CallTimestamp"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DCVN - CallTimestamp"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DCVN - CallTimestamp.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DCVN - CallTimestamp.Inputs[Data Conversion Input].Columns[CallTimestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallTimestamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT - Call\DCVN - CallTimestamp.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]"
+                      name="CallTimestamp_DCVN"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallTimestamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT - Call\DCVN - CallTimestamp.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DCVN - Convert Waitime in Int"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DCVN - Convert Waitime in Int"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DCVN - Convert Waitime in Int.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DCVN - Convert Waitime in Int.Inputs[Data Conversion Input].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[WaitTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT - Call\DCVN - Convert Waitime in Int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Output].Columns[WaitTime_int]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Output].Columns[WaitTime_int]"
+                      name="WaitTime_int"
+                      precision="18"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[WaitTime]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT - Call\DCVN - Convert Waitime in Int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - Add SLAStatus"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Add SLAStatus"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - Add SLAStatus.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DER - Add SLAStatus.Inputs[Derived Column Input].Columns[WaitTime_int]"
+                      cachedDataType="numeric"
+                      cachedName="WaitTime_int"
+                      cachedPrecision="18"
+                      lineageId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Output].Columns[WaitTime_int]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - Add SLAStatus.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Output].Columns[SLAStatus]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="11"
+                      lineageId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Output].Columns[SLAStatus]"
+                      name="SLAStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Output].Columns[WaitTime_int]} &lt; 35 ? "Within SLA" : "Outside SLA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">WaitTime_int &lt; 35 ? "Within SLA" : "Outside SLA"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - Add SLAStatus.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - CallDay"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - CallDay"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - CallDay.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DER - CallDay.Inputs[Derived Column Input].Columns[CallTimestamp_DCVN]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_DCVN"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallDay.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Output].Columns[CallDay]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Output].Columns[CallDay]"
+                      name="CallDay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)[DAY](#{Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)DAY(CallTimestamp_DCVN)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallDay.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - CallHour"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - CallHour"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - CallHour.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DER - CallHour.Inputs[Derived Column Input].Columns[CallTimestamp_DCVN]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_DCVN"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallHour.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Output].Columns[CallHour]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Output].Columns[CallHour]"
+                      name="CallHour"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)[DATEPART]("Hour",#{Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)DATEPART("Hour",CallTimestamp_DCVN)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallHour.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - CallMinute"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - CallMinute"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - CallMinute.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DER - CallMinute.Inputs[Derived Column Input].Columns[CallTimestamp_DCVN]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_DCVN"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallMinute.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Output].Columns[CallMinute]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Output].Columns[CallMinute]"
+                      name="CallMinute"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)[DATEPART]("Minute",#{Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)DATEPART("Minute",CallTimestamp_DCVN)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallMinute.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - CallMonth"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - CallMonth"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - CallMonth.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DER - CallMonth.Inputs[Derived Column Input].Columns[CallTimestamp_DCVN]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_DCVN"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallMonth.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Output].Columns[CallMonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Output].Columns[CallMonth]"
+                      name="CallMonth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)[MONTH](#{Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)MONTH(CallTimestamp_DCVN)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallMonth.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - CallYear"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - CallYear"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - CallYear.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DER - CallYear.Inputs[Derived Column Input].Columns[CallTimestamp_DCVN]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_DCVN"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallYear.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Output].Columns[CallYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Output].Columns[CallYear]"
+                      name="CallYear"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)[YEAR](#{Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)YEAR(CallTimestamp_DCVN)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - CallYear.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - DayOfWeek"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - DayOfWeek"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - DayOfWeek.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\DER - DayOfWeek.Inputs[Derived Column Input].Columns[CallTimestamp_DCVN]"
+                      cachedDataType="date"
+                      cachedName="CallTimestamp_DCVN"
+                      lineageId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - DayOfWeek.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Output].Columns[DayOfWeek]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Output].Columns[DayOfWeek]"
+                      name="DayOfWeek"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)[DATEPART]("Weekday",#{Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output].Columns[CallTimestamp_DCVN]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)DATEPART("Weekday",CallTimestamp_DCVN)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - DayOfWeek.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - Reject CallTimestampe in Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Reject CallTimestampe in Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[Reject Date]"
+                      name="Reject Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="13"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"CallTimestamp"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"CallTimestamp"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="129"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The Value" + (DT_WSTR,100)"CallTimestamp" + " is not a valid Date"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The Value" + (DT_WSTR,100)"CallTimestamp" + " is not a valid Date"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\DER - Reject Waitime in Data 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Reject Waitime in Data 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Call\DER - Reject Waitime in Data 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[Reject Date]"
+                      name="Reject Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="7"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Waitime"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Waitime"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="128"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The Value" + (DT_WSTR,100)"Waitime" + " is not a valid Int"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The Value" + (DT_WSTR,100)"Waitime" + " is not a valid Int"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Call\DER - Reject Waitime in Data 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\OLE_DST - Call"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST - Call"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Call]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Call\OLE_DST - Call.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[Call Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Call Type]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[CallDuration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallDuration"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallDuration]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[WaitTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WaitTime"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[WaitTime]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CallAbandoned"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallAbandoned]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[Id_file]"
+                      cachedDataType="wstr"
+                      cachedLength="260"
+                      cachedName="Id_file"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[Id_file]"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Id_file]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[CallYear]"
+                      cachedDataType="i4"
+                      cachedName="CallYear"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallYear]"
+                      lineageId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Output].Columns[CallYear]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[CallMonth]"
+                      cachedDataType="i4"
+                      cachedName="CallMonth"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallMonth]"
+                      lineageId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Output].Columns[CallMonth]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[CallDay]"
+                      cachedDataType="i4"
+                      cachedName="CallDay"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallDay]"
+                      lineageId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Output].Columns[CallDay]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[CallHour]"
+                      cachedDataType="i4"
+                      cachedName="CallHour"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallHour]"
+                      lineageId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Output].Columns[CallHour]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[CallMinute]"
+                      cachedDataType="i4"
+                      cachedName="CallMinute"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallMinute]"
+                      lineageId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Output].Columns[CallMinute]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[DayOfWeek]"
+                      cachedDataType="i4"
+                      cachedName="DayOfWeek"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[DayOfWeek]"
+                      lineageId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Output].Columns[DayOfWeek]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[WaitTime_int]"
+                      cachedDataType="numeric"
+                      cachedName="WaitTime_int"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime_int]"
+                      lineageId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Output].Columns[WaitTime_int]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].Columns[SLAStatus]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="SLAStatus"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[SLAStatus]"
+                      lineageId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Output].Columns[SLAStatus]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[Call_ID]"
+                      dataType="i4"
+                      name="Call_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Call Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallDuration" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="WaitTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallAbandoned" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[Id_file]"
+                      dataType="wstr"
+                      length="260"
+                      name="Id_file" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallYear]"
+                      dataType="i4"
+                      name="CallYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallMonth]"
+                      dataType="i4"
+                      name="CallMonth" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallDay]"
+                      dataType="i4"
+                      name="CallDay" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallHour]"
+                      dataType="i4"
+                      name="CallHour" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[CallMinute]"
+                      dataType="i4"
+                      name="CallMinute" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[DayOfWeek]"
+                      dataType="i4"
+                      name="DayOfWeek" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime_int]"
+                      dataType="numeric"
+                      name="WaitTime_int"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input].ExternalColumns[SLAStatus]"
+                      dataType="wstr"
+                      length="11"
+                      name="SLAStatus" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\OLE_DST - Call.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\OLE_DST - Call.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_DST - Call.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\OLE_DST - Call.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\OLE_DST - Technical Rejects"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST - Technical Rejects"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Technical_Rejects]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Call\OLE_DST - Technical Rejects.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ADM_Projet_DSTI_ETL_Service_Spot]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ADM_Projet_DSTI_ETL_Service_Spot]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[Reject Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Reject Date"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject Date]"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[Reject Date]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectPackageAndTask]"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectPackageAndTask]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="RejectColumn"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectColumn]"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectColumn]" />
+                    <inputColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="129"
+                      cachedName="RejectDescription"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDescription]"
+                      lineageId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1].Columns[RejectDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Reject Date]"
+                      dataType="dbTimeStamp"
+                      name="Reject Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      length="205"
+                      name="RejectPackageAndTask" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectColumn]"
+                      dataType="wstr"
+                      length="13"
+                      name="RejectColumn" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDescription]"
+                      dataType="wstr"
+                      length="132"
+                      name="RejectDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\OLE_DST - Technical Rejects.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Call\OLE_SRC - STA Call"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC - STA Call"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Data_Call]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Call\OLE_SRC - STA Call.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallTimestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[CallTimestamp]"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallTimestamp]"
+                      name="CallTimestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Call Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[Call Type]"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Call Type]"
+                      name="Call Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallDuration]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[CallDuration]"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallDuration]"
+                      name="CallDuration"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[WaitTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[WaitTime]"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[WaitTime]"
+                      name="WaitTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallAbandoned]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[CallAbandoned]"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[CallAbandoned]"
+                      name="CallAbandoned"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Id_file]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[Id_file]"
+                      length="260"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].Columns[Id_file]"
+                      name="Id_file"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[CallTimestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallTimestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[Call Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Call Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[CallDuration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallDuration" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[WaitTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="WaitTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[CallAbandoned]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallAbandoned" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output].ExternalColumns[Id_file]"
+                      dataType="wstr"
+                      length="260"
+                      name="Id_file" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[CallTimestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[CallTimestamp]"
+                      name="CallTimestamp" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[Call Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[Call Type]"
+                      name="Call Type" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[CallDuration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[CallDuration]"
+                      name="CallDuration" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[WaitTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[WaitTime]"
+                      name="WaitTime" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[CallAbandoned]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[CallAbandoned]"
+                      name="CallAbandoned" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[Id_file]"
+                      dataType="wstr"
+                      length="260"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[Id_file]"
+                      name="Id_file" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Call.Paths[Data Conversion Error Output]"
+              endId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Inputs[Derived Column Input]"
+              name="Data Conversion Error Output"
+              startId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Data Conversion Error Output1]"
+              endId="Package\DFT - Call\DER - Reject Waitime in Data 1.Inputs[Derived Column Input]"
+              name="Data Conversion Error Output"
+              startId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Data Conversion Output]"
+              endId="Package\DFT - Call\DER - CallYear.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT - Call\DCVN - CallTimestamp.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Data Conversion Output1]"
+              endId="Package\DFT - Call\DER - Add SLAStatus.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT - Call\DCVN - Convert Waitime in Int.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output]"
+              endId="Package\DFT - Call\DER - CallMonth.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - CallYear.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output1]"
+              endId="Package\DFT - Call\DER - CallDay.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - CallMonth.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output2]"
+              endId="Package\DFT - Call\DER - CallHour.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - CallDay.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output3]"
+              endId="Package\DFT - Call\DER - CallMinute.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - CallHour.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output4]"
+              endId="Package\DFT - Call\DER - DayOfWeek.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - CallMinute.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output5]"
+              endId="Package\DFT - Call\DCVN - Convert Waitime in Int.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - DayOfWeek.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output6]"
+              endId="Package\DFT - Call\OLE_DST - Call.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - Add SLAStatus.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output7]"
+              endId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - Reject Waitime in Data 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Derived Column Output8]"
+              endId="Package\DFT - Call\ALL- Rejects.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\DFT - Call\DER - Reject CallTimestampe in Data.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[OLE DB Source Output]"
+              endId="Package\DFT - Call\DCVN - CallTimestamp.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - Call\OLE_SRC - STA Call.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT - Call.Paths[Union All Output 1]"
+              endId="Package\DFT - Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\DFT - Call\ALL- Rejects.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7A9812F6-D0CE-46CA-9BE5-4BFD71E2DCC4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C4652761-057D-47AB-AF06-13A768883C47}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Call" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{42CE8218-162C-49EA-9D64-38AC4A763DD6}"
+      DTS:From="Package\SQL - Truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT - Call" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="129,42"
+          Id="Package\DFT - Call"
+          TopLeft="243,119" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\SQL - Truncate"
+          TopLeft="252,18" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="329,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.5,59"
+              Start="0,0"
+              End="-21.5,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
+                  <mssgle:LineSegment
+                    End="-17.5,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.5,29.5"
+                    Point2="-21.5,29.5"
+                    Point3="-21.5,33.5" />
+                  <mssgle:LineSegment
+                    End="-21.5,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Call">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\DFT - Call\OLE_SRC - STA Call"
+          TopLeft="4,2" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\DFT - Call\DCVN - CallTimestamp"
+          TopLeft="0,99" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[OLE DB Source Output]"
+          TopLeft="96,44">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DFT - Call\DER - CallYear"
+          TopLeft="12,196" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Data Conversion Output]"
+          TopLeft="92.75,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DFT - Call\DER - CallMonth"
+          TopLeft="13,278" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output]"
+          TopLeft="89,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21,40"
+              Start="0,0"
+              End="-21,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7638376383764" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.7638376383764"
+                    Point2="0,23.7638376383764"
+                    Point3="-4,23.7638376383764" />
+                  <mssgle:LineSegment
+                    End="-17,23.7638376383764" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17,23.7638376383764"
+                    Point2="-21,23.7638376383764"
+                    Point3="-21,27.7638376383764" />
+                  <mssgle:LineSegment
+                    End="-21,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT - Call\DER - CallDay"
+          TopLeft="189,277" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output1]"
+          TopLeft="93.5,320">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.5,-1"
+              Start="0,0"
+              End="170.5,6.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="166.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166.5,22.5"
+                    Point2="170.5,22.5"
+                    Point3="170.5,18.5" />
+                  <mssgle:LineSegment
+                    End="170.5,6.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT - Call\DER - CallHour"
+          TopLeft="370,278" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output2]"
+          TopLeft="339,298.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,0"
+              Start="0,0"
+              End="23.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\DFT - Call\DER - CallMinute"
+          TopLeft="358,363" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output3]"
+          TopLeft="447.5,320">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.5,43"
+              Start="0,0"
+              End="-33.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5507246376812" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5507246376812"
+                    Point2="0,25.5507246376812"
+                    Point3="-4,25.5507246376812" />
+                  <mssgle:LineSegment
+                    End="-29.5,25.5507246376812" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.5,25.5507246376812"
+                    Point2="-33.5,25.5507246376812"
+                    Point3="-33.5,29.5507246376812" />
+                  <mssgle:LineSegment
+                    End="-33.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT - Call\DER - DayOfWeek"
+          TopLeft="557,364" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output4]"
+          TopLeft="522,384.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35,0"
+              Start="0,0"
+              End="27.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\DFT - Call\DER - Add SLAStatus"
+          TopLeft="917,370" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\DFT - Call\DCVN - Convert Waitime in Int"
+          TopLeft="571,295" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output5]"
+          TopLeft="645.416666666667,364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-27"
+              Start="0,0"
+              End="0,-19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Data Conversion Output1]"
+          TopLeft="721.666666666667,337">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="288.333333333333,33"
+              Start="0,0"
+              End="288.333333333333,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.33797909407666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.33797909407666"
+                    Point2="0,13.3379790940767"
+                    Point3="4,13.3379790940767" />
+                  <mssgle:LineSegment
+                    End="284.333333333333,13.3379790940767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="284.333333333333,13.3379790940767"
+                    Point2="288.333333333333,13.3379790940767"
+                    Point3="288.333333333333,17.3379790940767" />
+                  <mssgle:LineSegment
+                    End="288.333333333333,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DFT - Call\OLE_DST - Call"
+          TopLeft="928,458" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output6]"
+          TopLeft="1008.5,412">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="263,42"
+          Id="Package\DFT - Call\DER - Reject CallTimestampe in Data"
+          TopLeft="317,72" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Data Conversion Error Output]"
+          TopLeft="193,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,-27"
+              Start="0,0"
+              End="116.5,-27">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58,0"
+                    Point2="62,0"
+                    Point3="62,-4" />
+                  <mssgle:LineSegment
+                    End="62,-23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62,-23"
+                    Point2="62,-27"
+                    Point3="66,-27" />
+                  <mssgle:LineSegment
+                    End="116.5,-27" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.08638671874999,1,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="232,42"
+          Id="Package\DFT - Call\DER - Reject Waitime in Data 1"
+          TopLeft="325,143" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Data Conversion Error Output1]"
+          TopLeft="685,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-244,-110"
+              Start="0,0"
+              End="-244,-102.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-51"
+                    Point2="0,-55"
+                    Point3="-4,-55" />
+                  <mssgle:LineSegment
+                    End="-240,-55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-240,-55"
+                    Point2="-244,-55"
+                    Point3="-244,-59" />
+                  <mssgle:LineSegment
+                    End="-244,-102.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-188.08638671875,-50,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\DFT - Call\ALL- Rejects"
+          TopLeft="734,111" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output7]"
+          TopLeft="557,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="177,-32"
+              Start="0,0"
+              End="169.5,-32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="84.5,0"
+                    Point2="88.5,0"
+                    Point3="88.5,-4" />
+                  <mssgle:LineSegment
+                    End="88.5,-28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.5,-28"
+                    Point2="88.5,-32"
+                    Point3="92.5,-32" />
+                  <mssgle:LineSegment
+                    End="169.5,-32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Derived Column Output8]"
+          TopLeft="580,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154,33.3333333333333"
+              Start="0,0"
+              End="146.5,33.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="85.0091743119266,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.0091743119266,0"
+                    Point2="89.0091743119266,0"
+                    Point3="89.0091743119266,4" />
+                  <mssgle:LineSegment
+                    End="89.0091743119266,29.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89.0091743119266,29.3333333333333"
+                    Point2="89.0091743119266,33.3333333333333"
+                    Point3="93.0091743119266,33.3333333333333" />
+                  <mssgle:LineSegment
+                    End="146.5,33.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="225,42"
+          Id="Package\DFT - Call\OLE_DST - Technical Rejects"
+          TopLeft="733,183" />
+        <EdgeLayout
+          Id="Package\DFT - Call.Paths[Union All Output 1]"
+          TopLeft="805,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.5,30"
+              Start="0,0"
+              End="40.5,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="4,15" />
+                  <mssgle:LineSegment
+                    End="36.5,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.5,15"
+                    Point2="40.5,15"
+                    Point3="40.5,19" />
+                  <mssgle:LineSegment
+                    End="40.5,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Call\OLE_SRC - STA Call">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Call\OLE_DST - Call">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Call\OLE_DST - Technical Rejects">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

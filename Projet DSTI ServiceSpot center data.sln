@@ -7,9 +7,12 @@ Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Projet DSTI ServiceSpot cen
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Connection S3|Default = Connection S3|Default
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DD8305A-A6E1-4819-BB25-2B66AD77A893}.Connection S3|Default.ActiveCfg = Development
+		{5DD8305A-A6E1-4819-BB25-2B66AD77A893}.Connection S3|Default.Build.0 = Development
 		{5DD8305A-A6E1-4819-BB25-2B66AD77A893}.Development|Default.ActiveCfg = Development
 		{5DD8305A-A6E1-4819-BB25-2B66AD77A893}.Development|Default.Build.0 = Development
 	EndGlobalSection
