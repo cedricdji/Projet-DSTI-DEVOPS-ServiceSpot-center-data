@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_test_1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{484C7615-E349-4F78-985D-95CA0E6C0699}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{94DE2531-F1DB-475D-B5BF-C4057770E44C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -107,6 +107,16 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{4FD7F94E-DA3A-455F-BECB-14FEDCF2A335}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{7F869B7B-DCA4-446B-B284-41CC8753CE2F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -152,7 +162,18 @@
           </ForEachFileEnumeratorProperties>
         </DTS:ObjectData>
       </DTS:ForEachEnumerator>
-      <DTS:Variables />
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{7EDA10DD-2877-46A1-991F-5ED709DEF5DD}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Archived">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\DFT - STA_Data Call"
@@ -168,6 +189,80 @@
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DER - Add Id_Files"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Output].Columns[Id_file]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="260"
+                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Output].Columns[Id_file]"
+                          name="Id_file"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,260)[SUBSTRING](@[User::CurrentFileName],[LEN](@[User::CurrentFileName]) - [FINDSTRING]([REVERSE](@[User::CurrentFileName]),"\\",1) + 2,[LEN](@[User::CurrentFileName]))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,260)SUBSTRING(@[User::CurrentFileName],LEN(@[User::CurrentFileName]) - FINDSTRING(REVERSE(@[User::CurrentFileName]),"\\",1) + 2,LEN(@[User::CurrentFileName]))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File"
                   componentClassID="Microsoft.FlatFileSource"
@@ -402,11 +497,11 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination"
+                  refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE DB Destination"
+                  name="OLE_DST - Call_Data"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -459,7 +554,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
                       connectionManagerRefId="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
                       description="The OLE DB runtime connection used to access the database."
@@ -467,120 +562,132 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CallTimestamp]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].Columns[CallTimestamp]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="CallTimestamp"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
                           lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File.Outputs[Flat File Source Output].Columns[CallTimestamp]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Call Type]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].Columns[Call Type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="Call Type"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
                           lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File.Outputs[Flat File Source Output].Columns[Call Type]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="EmployeeID"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File.Outputs[Flat File Source Output].Columns[EmployeeID]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CallDuration]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].Columns[CallDuration]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="CallDuration"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
                           lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File.Outputs[Flat File Source Output].Columns[CallDuration]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WaitTime]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].Columns[WaitTime]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="WaitTime"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
                           lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File.Outputs[Flat File Source Output].Columns[WaitTime]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="255"
                           cachedName="CallAbandoned"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
                           lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File.Outputs[Flat File Source Output].Columns[CallAbandoned]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].Columns[Id_file]"
+                          cachedDataType="wstr"
+                          cachedLength="260"
+                          cachedName="Id_file"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[Id_file]"
+                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Output].Columns[Id_file]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="CallTimestamp" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="Call Type" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="EmployeeID" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="CallDuration" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="WaitTime" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="CallAbandoned" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input].ExternalColumns[Id_file]"
+                          dataType="wstr"
+                          length="260"
+                          name="Id_file" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -591,8 +698,13 @@
               </components>
               <paths>
                 <path
+                  refId="Package\Foreach Loop Container\DFT - STA_Data Call.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Foreach Loop Container\DFT - STA_Data Call.Paths[Flat File Source Output]"
-                  endId="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files.Inputs[Derived Column Input]"
                   name="Flat File Source Output"
                   startId="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File.Outputs[Flat File Source Output]" />
               </paths>
@@ -603,10 +715,16 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{106A0567-0D77-4277-9B22-D662854E79DF}"
-          DTS:ObjectName="{106A0567-0D77-4277-9B22-D662854E79DF}"
+          DTS:DTSID="{44B773AB-12F1-460A-975B-AECB6AA01F0E}"
+          DTS:ObjectName="{44B773AB-12F1-460A-975B-AECB6AA01F0E}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileName" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{D1BADB9E-D71B-4F4B-B572-BB955D38D9A9}"
+          DTS:ObjectName="{D1BADB9E-D71B-4F4B-B572-BB955D38D9A9}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::CurrentFileName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
@@ -652,44 +770,44 @@
         <NodeLayout
           Size="183,42"
           Id="Package\Foreach Loop Container\DFT - STA_Data Call"
-          TopLeft="69,8" />
+          TopLeft="74,34" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="295,105"
-          Size="295,148"
+          PanelSize="308,230"
+          Size="308,273"
           Id="Package\Foreach Loop Container"
-          TopLeft="250,112" />
+          TopLeft="203,139" />
         <NodeLayout
           Size="154,42"
           Id="Package\SQL - Truncate"
-          TopLeft="311,40" />
+          TopLeft="312,39" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="388,82">
+          TopLeft="389,81">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.5,30"
+              EndConnector="-32,58"
               Start="0,0"
-              End="9.5,22.5">
+              End="-32,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11" />
+                    End="0,25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11"
-                    Point2="0,15"
-                    Point3="4,15" />
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
                   <mssgle:LineSegment
-                    End="5.5,15" />
+                    End="-28,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.5,15"
-                    Point2="9.5,15"
-                    Point3="9.5,19" />
+                    Point1="-28,29"
+                    Point2="-32,29"
+                    Point3="-32,33" />
                   <mssgle:LineSegment
-                    End="9.5,22.5" />
+                    End="-32,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -705,29 +823,33 @@
     design-time-name="Package\Foreach Loop Container\DFT - STA_Data Call">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="205,42"
           Id="Package\Foreach Loop Container\DFT - STA_Data Call\FF - Extract Call Data File"
-          TopLeft="230,8" />
+          TopLeft="247,10" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination"
-          TopLeft="244,110" />
+          Size="173,42"
+          Id="Package\Foreach Loop Container\DFT - STA_Data Call\DER - Add Id_Files"
+          TopLeft="257,131" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data"
+          TopLeft="252,258" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\DFT - STA_Data Call.Paths[Flat File Source Output]"
-          TopLeft="332.5,50">
+          TopLeft="346.5,52">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,79"
               Start="0,0"
-              End="0,52.5">
+              End="0,71.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,71.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -736,11 +858,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\DFT - STA_Data Call.Paths[Derived Column Output]"
+          TopLeft="344.5,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85"
+              Start="0,0"
+              End="0,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Adding Id_Files To find out where the recording came from"
+          ParentId="Package\Foreach Loop Container\DFT - STA_Data Call"
+          FontInfo="{assembly:Null}"
+          Size="340,40"
+          Id="ea778504-ec7e-49a5-9d6e-ccb772cace80"
+          TopLeft="423,132" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\DFT - STA_Data Call\OLE DB Destination">
+    design-time-name="Package\Foreach Loop Container\DFT - STA_Data Call\OLE_DST - Call_Data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

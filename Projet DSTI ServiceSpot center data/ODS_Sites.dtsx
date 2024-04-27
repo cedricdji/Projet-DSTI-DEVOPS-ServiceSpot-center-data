@@ -1,0 +1,905 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/27/2024 8:06:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-E63SU2KDKAG"
+  DTS:CreatorName="WIN-E63SU2KDKAG\Administrator"
+  DTS:DTSID="{EC7CF17A-1DB8-4354-8B11-B2E2474054CA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{849FC07B-257E-4C6A-9CE3-A3B2E00400F0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2013A489-5033-4E94-8DA0-91824C4AC382}"
+      DTS:ObjectName="localhost.ODS_Projet_DSTI_ETL_Service_Spot">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ODS_Projet_DSTI_ETL_Service_Spot;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{2013A489-5033-4E94-8DA0-91824C4AC382}localhost.ODS_Projet_DSTI_ETL_Service_Spot;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DB76A2E2-C52B-4A31-A4A0-6B2FB5A08A9D}"
+      DTS:ObjectName="localhost.STA_Projet_DSTI_ETL_Service_Spot">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=STA_Projet_DSTI_ETL_Service_Spot;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{DB76A2E2-C52B-4A31-A4A0-6B2FB5A08A9D}localhost.STA_Projet_DSTI_ETL_Service_Spot;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - Sites"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ED8E4716-A7AF-4505-A64E-EE4A4CDCBFBF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Sites"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Sites\AGG - Site"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="AGG - Site"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT - Sites\AGG - Site.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Sites\AGG - Site.Inputs[Aggregate Input 1].Columns[Site]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Site"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[Site]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]"
+                      name="Site">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[Site]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Sites\DER - StateCD"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - StateCD"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Sites\DER - StateCD.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Sites\DER - StateCD.Inputs[Derived Column Input].Columns[Site]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Site"
+                      lineageId="Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Sites\DER - StateCD.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Output].Columns[StateCD_Site]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Output].Columns[StateCD_Site]"
+                      name="StateCD_Site"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LTRIM]([RTRIM]([SUBSTRING](#{Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]},[FINDSTRING](#{Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]},",",1) + 1,[LEN](#{Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]}))))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LTRIM(RTRIM(SUBSTRING(Site,FINDSTRING(Site,",",1) + 1,LEN(Site))))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Sites\DER - StateCD.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Sites\DER - Town"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Town"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Sites\DER - Town.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Sites\DER - Town.Inputs[Derived Column Input].Columns[Site]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Site"
+                      lineageId="Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Sites\DER - Town.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Output].Columns[Town]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Output].Columns[Town]"
+                      name="Town"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEFT](#{Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]},[FINDSTRING](#{Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]},",",1) - 1)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(Site,FINDSTRING(Site,",",1) - 1)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Sites\DER - Town.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Sites\OLE_DST - Sites"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST - Sites"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Sites]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Sites\OLE_DST - Sites.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ODS_Projet_DSTI_ETL_Service_Spot]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].Columns[Site]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Site"
+                      externalMetadataColumnId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                      lineageId="Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1].Columns[Site]" />
+                    <inputColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].Columns[Town]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Town"
+                      externalMetadataColumnId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].ExternalColumns[Town]"
+                      lineageId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Output].Columns[Town]" />
+                    <inputColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].Columns[StateCD_Site]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StateCD_Site"
+                      externalMetadataColumnId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].ExternalColumns[StateCD_Site]"
+                      lineageId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Output].Columns[StateCD_Site]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].ExternalColumns[SiteKey]"
+                      dataType="i4"
+                      name="SiteKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Site" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].ExternalColumns[Town]"
+                      dataType="wstr"
+                      length="255"
+                      name="Town" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input].ExternalColumns[StateCD_Site]"
+                      dataType="wstr"
+                      length="255"
+                      name="StateCD_Site" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Sites\OLE_DST - Sites.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\OLE_DST - Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_DST - Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\OLE_DST - Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Sites\OLE_SRC - STA_Employee"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC - STA_Employee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.STA_Projet_DSTI_ETL_Service_Spot]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeName]"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[EmployeeName]"
+                      name="EmployeeName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[Site]"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[Site]"
+                      name="Site"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[ManagerName]"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].Columns[ManagerName]"
+                      name="ManagerName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="EmployeeName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Site" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output].ExternalColumns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ManagerName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[EmployeeName]"
+                      name="EmployeeName" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[Site]"
+                      name="Site" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[ManagerName]"
+                      name="ManagerName" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Sites.Paths[Aggregate Output 1]"
+              endId="Package\DFT - Sites\DER - Town.Inputs[Derived Column Input]"
+              name="Aggregate Output 1"
+              startId="Package\DFT - Sites\AGG - Site.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\DFT - Sites.Paths[Derived Column Output]"
+              endId="Package\DFT - Sites\DER - StateCD.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Sites\DER - Town.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Sites.Paths[Derived Column Output1]"
+              endId="Package\DFT - Sites\OLE_DST - Sites.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Sites\DER - StateCD.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Sites.Paths[OLE DB Source Output]"
+              endId="Package\DFT - Sites\AGG - Site.Inputs[Aggregate Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - Sites\OLE_SRC - STA_Employee.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7E3F5A07-1AAE-4A59-8E47-0A6D5EC9A57D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2013A489-5033-4E94-8DA0-91824C4AC382}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Sites" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CC887D6B-E339-47E0-B9F2-92352CF25718}"
+      DTS:From="Package\SQL - Truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT - Sites" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="134,42"
+          Id="Package\DFT - Sites"
+          TopLeft="135,97" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\SQL - Truncate"
+          TopLeft="114,12" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="191,54">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11,43"
+              Start="0,0"
+              End="11,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="7,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,21.5"
+                    Point2="11,21.5"
+                    Point3="11,25.5" />
+                  <mssgle:LineSegment
+                    End="11,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Sites">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\DFT - Sites\OLE_SRC - STA_Employee"
+          TopLeft="67,11" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\DFT - Sites\AGG - Site"
+          TopLeft="103,106" />
+        <EdgeLayout
+          Id="Package\DFT - Sites.Paths[OLE DB Source Output]"
+          TopLeft="172,53">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT - Sites\DER - Town"
+          TopLeft="102,194" />
+        <EdgeLayout
+          Id="Package\DFT - Sites.Paths[Aggregate Output 1]"
+          TopLeft="170.25,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153,42"
+          Id="Package\DFT - Sites\DER - StateCD"
+          TopLeft="99,275" />
+        <EdgeLayout
+          Id="Package\DFT - Sites.Paths[Derived Column Output]"
+          TopLeft="173.5,236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DFT - Sites\OLE_DST - Sites"
+          TopLeft="91,353" />
+        <EdgeLayout
+          Id="Package\DFT - Sites.Paths[Derived Column Output1]"
+          TopLeft="174,317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Sites\OLE_SRC - STA_Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Sites\OLE_DST - Sites">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{AE6560AD-2B88-4BA7-8D43-3B8C79C1AA5A}">
+  DTS:VersionBuild="89"
+  DTS:VersionGUID="{5541706A-156E-405D-87FE-DFCCECDB8A2E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -414,48 +414,48 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Charges_Call\Conditional Split"
+              refId="Package\DFT - Charges_Call\CSPL"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
+              name="CSPL"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]"
+                  refId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input]"
                   description="Input to the Conditional Split Transformation"
                   name="Conditional Split Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Type ]"
+                      refId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input].Columns[Call Type ]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Type "
                       lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Type ]" />
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2018)]"
+                      refId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input].Columns[Call Charges (2018)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Charges (2018)"
                       lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2018)]" />
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2019)]"
+                      refId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input].Columns[Call Charges (2019)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Charges (2019)"
                       lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2019)]" />
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2020)]"
+                      refId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input].Columns[Call Charges (2020)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Call Charges (2020)"
                       lineageId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output].Columns[Call Charges (2020)]" />
                     <inputColumn
-                      refId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input].Columns[Call Charges (2021)]"
+                      refId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input].Columns[Call Charges (2021)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
@@ -467,13 +467,13 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Charges_Call\Conditional Split.Outputs[RemoveBlankValue]"
+                  refId="Package\DFT - Charges_Call\CSPL.Outputs[RemoveBlankValue]"
                   description="Output 1 of the Conditional Split Transformation"
                   errorOrTruncationOperation="Computation"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="RemoveBlankValue"
-                  synchronousInputId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]"
+                  synchronousInputId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input]"
                   truncationRowDisposition="FailComponent">
                   <properties>
                     <property
@@ -495,11 +495,11 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Default Output]"
+                  refId="Package\DFT - Charges_Call\CSPL.Outputs[Conditional Split Default Output]"
                   description="Default Output of the Conditional Split Transformation"
                   exclusionGroup="1"
                   name="Conditional Split Default Output"
-                  synchronousInputId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input]">
                   <properties>
                     <property
                       dataType="System.Boolean"
@@ -508,23 +508,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output]"
+                  refId="Package\DFT - Charges_Call\CSPL.Outputs[Conditional Split Error Output]"
                   description="Error Output of the Conditional Split Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Conditional Split Error Output"
-                  synchronousInputId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]">
+                  synchronousInputId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Charges_Call\CSPL.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Charges_Call\CSPL.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Charges_Call\CSPL.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Charges_Call\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Charges_Call\CSPL.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1836,14 +1836,14 @@
               startId="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Charges_Call.Paths[OLE DB Source Output]"
-              endId="Package\DFT - Charges_Call\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\DFT - Charges_Call\CSPL.Inputs[Conditional Split Input]"
               name="OLE DB Source Output"
               startId="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DFT - Charges_Call.Paths[RemoveBlankValue]"
               endId="Package\DFT - Charges_Call\UPVT.Inputs[Unpivot Input]"
               name="RemoveBlankValue"
-              startId="Package\DFT - Charges_Call\Conditional Split.Outputs[RemoveBlankValue]" />
+              startId="Package\DFT - Charges_Call\CSPL.Outputs[RemoveBlankValue]" />
             <path
               refId="Package\DFT - Charges_Call.Paths[Union All Output 1]"
               endId="Package\DFT - Charges_Call\OLE_DST - Technical Rejects.Inputs[OLE DB Destination Input]"
@@ -1897,21 +1897,247 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="177,42"
           Id="Package\DFT - Charges_Call"
-          TopLeft="290,114" />
+          TopLeft="291,116" />
         <NodeLayout
           Size="242,42"
           Id="Package\SQL - Truncate table Charge Call"
           TopLeft="264,25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="381.75,67">
+          TopLeft="382.25,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Charges_Call">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="108,42"
+          Id="Package\DFT - Charges_Call\UPVT"
+          TopLeft="383.111111111111,108.111111111111" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\DFT - Charges_Call\DER - Reject row Year"
+          TopLeft="488,253" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric"
+          TopLeft="30,455" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DFT - Charges_Call\DER - REPLACE min"
+          TopLeft="68.888888888889,172.666666666667" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\DFT - Charges_Call\OLE_DST - Technical Rejects"
+          TopLeft="786,343" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\DFT - Charges_Call\CSPL"
+          TopLeft="80,98" />
+        <NodeLayout
+          Size="263,42"
+          Id="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric"
+          TopLeft="449,450" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\DFT - Charges_Call\OLE_DST - Call_Charges"
+          TopLeft="69,565" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call"
+          TopLeft="269,4" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\DFT - Charges_Call\DCVN - Convert Year in Int"
+          TopLeft="62,253" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule"
+          TopLeft="9,340" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\DFT - Charges_Call\All - Rejects"
+          TopLeft="511,342" />
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Unpivot Output]"
+          TopLeft="437.111111111111,150.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-276.222222222222,22.555555555556"
+              Start="0,0"
+              End="-276.222222222222,15.055555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.277777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.277777777778"
+                    Point2="0,11.277777777778"
+                    Point3="-4,11.277777777778" />
+                  <mssgle:LineSegment
+                    End="-272.222222222222,11.277777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-272.222222222222,11.277777777778"
+                    Point2="-276.222222222222,11.277777777778"
+                    Point3="-276.222222222222,15.277777777778" />
+                  <mssgle:LineSegment
+                    End="-276.222222222222,15.055555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Union All Output 1]"
+          TopLeft="649,363.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137,0"
+              Start="0,0"
+              End="129.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="129.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[RemoveBlankValue]"
+          TopLeft="188,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="195.111111111111,10.111111111111"
+              Start="0,0"
+              End="187.611111111111,10.111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.5555555555555,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="93.5555555555555,0"
+                    Point2="97.5555555555555,0"
+                    Point3="97.5555555555555,4" />
+                  <mssgle:LineSegment
+                    End="97.5555555555555,6.111111111111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="97.5555555555555,6.111111111111"
+                    Point2="97.5555555555555,10.111111111111"
+                    Point3="101.555555555555,10.111111111111" />
+                  <mssgle:LineSegment
+                    End="187.611111111111,10.111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="55.1142078993055,-15.7490234375,84.8826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[OLE DB Source Output]"
+          TopLeft="383,46">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-249,52"
+              Start="0,0"
+              End="-249,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
+                  <mssgle:LineSegment
+                    End="-245,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-245,26"
+                    Point2="-249,26"
+                    Point3="-249,30" />
+                  <mssgle:LineSegment
+                    End="-249,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Derived Column Output3]"
+          TopLeft="580.25,450">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-66"
+              Start="0,0"
+              End="0,-58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Derived Column Output2]"
+          TopLeft="581.5,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
               EndConnector="0,47"
               Start="0,0"
               End="0,39.5">
@@ -1928,52 +2154,34 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\DFT - Charges_Call">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="314,42"
-          Id="Package\DFT - Charges_Call\DER - REPLACE Call_Charges point par virgule"
-          TopLeft="9,340" />
-        <NodeLayout
-          Size="211,42"
-          Id="Package\DFT - Charges_Call\DCVN - Convert Year in Int"
-          TopLeft="62,253" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\DFT - Charges_Call\UPVT"
-          TopLeft="378.111111111111,104.111111111111" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\DFT - Charges_Call\OLE_SRC - STA Charges Call"
-          TopLeft="270,4" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\DFT - Charges_Call\OLE_DST - Call_Charges"
-          TopLeft="69,565" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DFT - Charges_Call\DER - REPLACE min"
-          TopLeft="68.888888888889,172.666666666667" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\DFT - Charges_Call\Conditional Split"
-          TopLeft="81,98" />
-        <NodeLayout
-          Size="281,42"
-          Id="Package\DFT - Charges_Call\DCVN - Convert Call_Charges in numeric"
-          TopLeft="30,455" />
+        <EdgeLayout
+          Id="Package\DFT - Charges_Call.Paths[Derived Column Output1]"
+          TopLeft="168.25,382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Charges_Call.Paths[Derived Column Output]"
           TopLeft="164.194444444445,214.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,38.333333333333"
               Start="0,0"
               End="0,30.833333333333">
@@ -1995,7 +2203,7 @@
           TopLeft="166.75,295">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,45"
               Start="0,0"
               End="0,37.5">
@@ -2017,7 +2225,7 @@
           TopLeft="171,497">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,68"
               Start="0,0"
               End="0,60.5">
@@ -2035,164 +2243,11 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Unpivot Output]"
-          TopLeft="432.111111111111,146.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-271.222222222222,26.555555555556"
-              Start="0,0"
-              End="-271.222222222222,19.055555555556">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.277777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.277777777778"
-                    Point2="0,13.277777777778"
-                    Point3="-4,13.277777777778" />
-                  <mssgle:LineSegment
-                    End="-267.222222222222,13.277777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-267.222222222222,13.277777777778"
-                    Point2="-271.222222222222,13.277777777778"
-                    Point3="-271.222222222222,17.277777777778" />
-                  <mssgle:LineSegment
-                    End="-271.222222222222,19.055555555556" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[RemoveBlankValue]"
-          TopLeft="240,122.055555555556">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="138.111111111111,0"
-              Start="0,0"
-              End="130.611111111111,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="130.611111111111,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.8642078993055,5,84.8826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[OLE DB Source Output]"
-          TopLeft="384,46">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-223.5,52"
-              Start="0,0"
-              End="-223.5,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="-4,26" />
-                  <mssgle:LineSegment
-                    End="-219.5,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-219.5,26"
-                    Point2="-223.5,26"
-                    Point3="-223.5,30" />
-                  <mssgle:LineSegment
-                    End="-223.5,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Derived Column Output1]"
-          TopLeft="168.25,382">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,73"
-              Start="0,0"
-              End="0,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="Change Call Charge at Numeric"
-          ParentId="Package\DFT - Charges_Call"
-          FontInfo="{x:Null}"
-          Size="195,40"
-          Id="393379d8-426e-428e-b3ad-1b325e65ef2f"
-          TopLeft="77.333333333333,494" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\DFT - Charges_Call\DER - Reject row Year"
-          TopLeft="488,253" />
-        <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Data Conversion Error Output]"
-          TopLeft="273,274">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="215,0"
-              Start="0,0"
-              End="207.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="207.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="37.66361328125,5,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="263,42"
-          Id="Package\DFT - Charges_Call\DER - Reject Call Charges in numeric"
-          TopLeft="449,450" />
-        <EdgeLayout
           Id="Package\DFT - Charges_Call.Paths[Data Conversion Error Output1]"
           TopLeft="311,473.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="138,0"
               Start="0,0"
               End="130.5,0">
@@ -2211,80 +2266,44 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="138,42"
-          Id="Package\DFT - Charges_Call\All - Rejects"
-          TopLeft="511,342" />
         <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Derived Column Output2]"
-          TopLeft="581.5,295">
+          Id="Package\DFT - Charges_Call.Paths[Data Conversion Error Output]"
+          TopLeft="273,274">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,47"
+              StartConnector="{assembly:Null}"
+              EndConnector="215,0"
               Start="0,0"
-              End="0,39.5">
+              End="207.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="207.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="37.66361328125,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Derived Column Output3]"
-          TopLeft="580.25,450">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,-66"
-              Start="0,0"
-              End="0,-58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="225,42"
-          Id="Package\DFT - Charges_Call\OLE_DST - Technical Rejects"
-          TopLeft="786,343" />
-        <EdgeLayout
-          Id="Package\DFT - Charges_Call.Paths[Union All Output 1]"
-          TopLeft="649,363.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="137,0"
-              Start="0,0"
-              End="129.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="129.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <AnnotationLayout
+          Text="Change Call Charge at Numeric"
+          ParentId="Package\DFT - Charges_Call"
+          FontInfo="{assembly:Null}"
+          Size="195,40"
+          Id="393379d8-426e-428e-b3ad-1b325e65ef2f"
+          TopLeft="77.333333333333,494" />
+        <AnnotationLayout
+          Text="Remove Blank Value"
+          ParentId="Package\DFT - Charges_Call"
+          FontInfo="{assembly:Null}"
+          Size="135,40"
+          Id="09af2e6d-bd63-44da-98be-bf5daf3db358"
+          TopLeft="53,39" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2302,7 +2321,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - Charges_Call\OLE_DST - Call_Charges">
+    design-time-name="Package\DFT - Charges_Call\OLE_DST - Technical Rejects">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2315,7 +2334,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - Charges_Call\OLE_DST - Technical Rejects">
+    design-time-name="Package\DFT - Charges_Call\OLE_DST - Call_Charges">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
