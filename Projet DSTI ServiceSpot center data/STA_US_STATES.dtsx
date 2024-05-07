@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{67ACC9D2-9E11-4BEB-A699-5748AE19506E}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{70388FE1-E126-4BE8-AACC-29504542107D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -494,33 +494,33 @@
         <NodeLayout
           Size="192,42"
           Id="Package\DFT - US STATES\FF_SRC - US STATES"
-          TopLeft="193,16" />
+          TopLeft="193,15" />
         <EdgeLayout
           Id="Package\DFT - US STATES.Paths[Flat File Source Output]"
-          TopLeft="289,58">
+          TopLeft="289,57">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12,129"
+              EndConnector="12,130"
               Start="0,0"
-              End="12,121.5">
+              End="12,122.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.5" />
+                    End="0,61" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,60.5"
-                    Point2="0,64.5"
-                    Point3="4,64.5" />
+                    Point1="0,61"
+                    Point2="0,65"
+                    Point3="4,65" />
                   <mssgle:LineSegment
-                    End="8,64.5" />
+                    End="8,65" />
                   <mssgle:CubicBezierSegment
-                    Point1="8,64.5"
-                    Point2="12,64.5"
-                    Point3="12,68.5" />
+                    Point1="8,65"
+                    Point2="12,65"
+                    Point3="12,69" />
                   <mssgle:LineSegment
-                    End="12,121.5" />
+                    End="12,122.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

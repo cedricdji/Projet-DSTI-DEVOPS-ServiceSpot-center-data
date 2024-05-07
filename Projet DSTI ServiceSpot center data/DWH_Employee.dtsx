@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DWH_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{455C30E0-450E-4ACC-98C8-D7E37D8D11A6}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{63CDD5C0-338B-4E54-91F6-4B87B4A67111}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -56,10 +56,7 @@
 	[Manager FullName] = ?,
 	[Manager FirstName] = ?,
 	[Manager LastName] = ?,
-	[Site] = ?,
-	[StateCD] = ?,
-	[StateName] = ?,
-	[Region] = ?
+	[Site] = ?
 	WHERE [EmployeeID] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -139,36 +136,12 @@
                       externalMetadataColumnId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Site]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].Columns[StateCD]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="2"
-                      cachedName="StateCD"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateCD]" />
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].Columns[StateName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="StateName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateName]" />
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].Columns[Region]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Region"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Region]" />
-                    <inputColumn
                       refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].Columns[EmployeeID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="EmployeeID"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -268,47 +241,8 @@
                       refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       codePage="1252"
                       dataType="str"
-                      length="2"
-                      name="Param_7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Param_8">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Param_9">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      codePage="1252"
-                      dataType="str"
                       length="10"
-                      name="Param_10">
+                      name="Param_7">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -352,11 +286,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - DimEmployee\LKP - Changes on existing employees"
+              refId="Package\DFT - DimEmployee\LKP - Change in any existing client"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="LKP - Changes on existing employees"
+              name="LKP - Change in any existing client"
               usesDispositions="true"
               version="6">
               <properties>
@@ -372,7 +306,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimEmployee]) [refTable]
-where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [refTable].[Employee FirstName] = ? and [refTable].[Employee LastName] = ? and [refTable].[Manager FullName] = ? and [refTable].[Manager FirstName] = ? and [refTable].[Manager LastName] = ? and [refTable].[Site] = ? and [refTable].[StateCD] = ? and [refTable].[StateName] = ? and [refTable].[Region] = ?</property>
+where [refTable].[Employee FullName] = ? and [refTable].[Employee FirstName] = ? and [refTable].[Employee LastName] = ? and [refTable].[Manager FullName] = ? and [refTable].[Manager FirstName] = ? and [refTable].[Manager LastName] = ? and [refTable].[Site] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -403,12 +337,12 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeSurrKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Site" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateCD" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeSurrKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Site" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee FullName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee FirstName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee LastName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager FullName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager FirstName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager LastName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Site]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateCD]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Region]};</property>
+                  name="ParameterMap">#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee FullName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee FirstName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee LastName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager FullName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager FirstName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager LastName]};#{Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Site]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -420,7 +354,7 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Connections[OleDbConnection]"
+                  refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Connections[OleDbConnection]"
                   connectionManagerID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}:external"
                   connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
                   description="Connection manager used to access lookup data."
@@ -428,29 +362,11 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input]"
+                  refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[EmployeeID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="EmployeeID"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">EmployeeID</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Employee FullName]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input].Columns[Employee FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -468,7 +384,7 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Employee FirstName]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input].Columns[Employee FirstName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -486,7 +402,7 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Employee LastName]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input].Columns[Employee LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -504,7 +420,7 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Manager FullName]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input].Columns[Manager FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -522,7 +438,7 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Manager FirstName]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input].Columns[Manager FirstName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -540,7 +456,7 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Manager LastName]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input].Columns[Manager LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -558,7 +474,7 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Site]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input].Columns[Site]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -575,98 +491,44 @@ where [refTable].[EmployeeID] = ? and [refTable].[Employee FullName] = ? and [re
                           name="CopyFromReferenceColumn" />
                       </properties>
                     </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[StateCD]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="2"
-                      cachedName="StateCD"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateCD]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">StateCD</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[StateName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="StateName"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateName]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">StateName</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input].Columns[Region]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Region"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Region]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Region</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup Match Output]"
+                  refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup No Match Output]"
+                  refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup Error Output]"
+                  refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -726,7 +588,7 @@ where [refTable].[EmployeeID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeSurrKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Site" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateCD" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeSurrKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Site" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -953,30 +815,6 @@ where [refTable].[EmployeeID] = ?</property>
                       cachedName="Site"
                       externalMetadataColumnId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Site]" />
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateCD]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="2"
-                      cachedName="StateCD"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCD]"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateCD]" />
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="StateName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateName]" />
-                    <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Region]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Region"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Region]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1032,24 +870,6 @@ where [refTable].[EmployeeID] = ?</property>
                       dataType="str"
                       length="50"
                       name="Site" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCD]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="StateCD" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="StateName" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Region" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1227,39 +1047,6 @@ where [refTable].[EmployeeID] = ?</property>
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Site]"
                       name="Site"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateCD]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].ExternalColumns[StateCD]"
-                      length="2"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateCD]"
-                      name="StateCD"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].ExternalColumns[StateName]"
-                      length="50"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[StateName]"
-                      name="StateName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Region]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].ExternalColumns[Region]"
-                      length="50"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Region]"
-                      name="Region"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1311,24 +1098,6 @@ where [refTable].[EmployeeID] = ?</property>
                       dataType="str"
                       length="50"
                       name="Site" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].ExternalColumns[StateCD]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="StateCD" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].ExternalColumns[StateName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="StateName" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].ExternalColumns[Region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Region" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1393,27 +1162,6 @@ where [refTable].[EmployeeID] = ?</property>
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[Site]"
                       name="Site" />
                     <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[StateCD]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[StateCD]"
-                      name="StateCD" />
-                    <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[StateName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[StateName]"
-                      name="StateName" />
-                    <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[Region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[Region]"
-                      name="Region" />
-                    <outputColumn
                       refId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -1434,7 +1182,7 @@ where [refTable].[EmployeeID] = ?</property>
           <paths>
             <path
               refId="Package\DFT - DimEmployee.Paths[Lookup Match Output]"
-              endId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Inputs[Lookup Input]"
+              endId="Package\DFT - DimEmployee\LKP - Change in any existing client.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\DFT - DimEmployee\LKP - EmployeeID.Outputs[Lookup Match Output]" />
             <path
@@ -1446,7 +1194,7 @@ where [refTable].[EmployeeID] = ?</property>
               refId="Package\DFT - DimEmployee.Paths[Lookup No Match Output1]"
               endId="Package\DFT - DimEmployee\CMD - Update existing records with latest changes.Inputs[OLE DB Command Input]"
               name="Lookup No Match Output"
-              startId="Package\DFT - DimEmployee\LKP - Changes on existing employees.Outputs[Lookup No Match Output]" />
+              startId="Package\DFT - DimEmployee\LKP - Change in any existing client.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\DFT - DimEmployee.Paths[OLE DB Source Output]"
               endId="Package\DFT - DimEmployee\LKP - EmployeeID.Inputs[Lookup Input]"
@@ -1480,19 +1228,11 @@ where [refTable].[EmployeeID] = ?</property>
     design-time-name="Package\DFT - DimEmployee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="205,42"
-          Id="Package\DFT - DimEmployee\LKP - EmployeeID"
-          TopLeft="119,169" />
-        <NodeLayout
-          Size="265,42"
-          Id="Package\DFT - DimEmployee\LKP - Changes on existing employees"
-          TopLeft="569,167" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="216,42"
           Id="Package\DFT - DimEmployee\OLE_SRC - ODS Employee"
-          TopLeft="113,45" />
+          TopLeft="123,46" />
         <NodeLayout
           Size="325,42"
           Id="Package\DFT - DimEmployee\CMD - Update existing records with latest changes"
@@ -1501,100 +1241,6 @@ where [refTable].[EmployeeID] = ?</property>
           Size="177,42"
           Id="Package\DFT - DimEmployee\OLE DB Destination"
           TopLeft="137,387" />
-        <EdgeLayout
-          Id="Package\DFT - DimEmployee.Paths[Lookup Match Output]"
-          TopLeft="324,189">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="245,0"
-              Start="0,0"
-              End="237.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="237.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="70.55861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - DimEmployee.Paths[OLE DB Source Output]"
-          TopLeft="221.25,87">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,82"
-              Start="0,0"
-              End="0,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output1]"
-          TopLeft="834,185">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="235,0"
-              Start="0,0"
-              End="227.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="227.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="57.94361328125,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output]"
-          TopLeft="223.5,211">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,176"
-              Start="0,0"
-              End="0,168.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,168.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,78.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <AnnotationLayout
           Text="1 - From data source ODS Employee"
           ParentId="Package\DFT - DimEmployee"
@@ -1630,6 +1276,120 @@ where [refTable].[EmployeeID] = ?</property>
           Size="735,56"
           Id="85363532-2191-4118-8681-f5b23eec7aa1"
           TopLeft="1006,87" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\DFT - DimEmployee\LKP - EmployeeID"
+          TopLeft="135,171" />
+        <EdgeLayout
+          Id="Package\DFT - DimEmployee.Paths[OLE DB Source Output]"
+          TopLeft="231,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.5,83"
+              Start="0,0"
+              End="-11.5,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="-4,41.5" />
+                  <mssgle:LineSegment
+                    End="-7.5,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.5,41.5"
+                    Point2="-11.5,41.5"
+                    Point3="-11.5,45.5" />
+                  <mssgle:LineSegment
+                    End="-11.5,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output]"
+          TopLeft="222.5,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,174"
+              Start="0,0"
+              End="0,166.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,166.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,77.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="249,42"
+          Id="Package\DFT - DimEmployee\LKP - Change in any existing client"
+          TopLeft="576,167" />
+        <EdgeLayout
+          Id="Package\DFT - DimEmployee.Paths[Lookup Match Output]"
+          TopLeft="304,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="272,0"
+              Start="0,0"
+              End="264.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="264.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="84.05861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output1]"
+          TopLeft="825,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="244,0"
+              Start="0,0"
+              End="236.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="236.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="62.44361328125,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1643,29 +1403,6 @@ where [refTable].[EmployeeID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - DimEmployee\LKP - Changes on existing employees">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimEmployee]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1688,7 +1425,7 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1698,7 +1435,30 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - DimEmployee\LKP - Change in any existing client">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimEmployee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

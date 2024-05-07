@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{42F4907D-B9A7-4C58-B17B-AF110A4929DD}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{9276AD0C-A890-4103-8D9F-8B92D55CF7C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -81,7 +81,7 @@
                     <inputColumn
                       refId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Inputs[Aggregate Input 1].Columns[RejectColumn]"
                       cachedDataType="wstr"
-                      cachedLength="10"
+                      cachedLength="255"
                       cachedName="RejectColumn"
                       lineageId="Package\DFT - Fact Call_Data\DER- Employee Rejetcs.Outputs[Derived Column Output].Columns[RejectColumn]" />
                     <inputColumn
@@ -277,7 +277,6 @@
                       refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 1].Columns[Time]"
                       cachedDataType="dbTime2"
                       cachedName="Time"
-                      cachedScale="7"
                       lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Time]">
                       <properties>
                         <property
@@ -360,16 +359,58 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 1].Columns[CallFees_perMin]"
-                      cachedDataType="cy"
-                      cachedName="CallFees_perMin"
-                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFees_perMin]">
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 1].Columns[Service_Level_Agreement]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="Service_Level_Agreement"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Service_Level_Agreement]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFees_perMin]}</property>
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[Service_Level_Agreement]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 1].Columns[SourceName]"
+                      cachedDataType="nText"
+                      cachedName="SourceName"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[SourceName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 1].Columns[CallFee_perMin]"
+                      cachedDataType="cy"
+                      cachedName="CallFee_perMin"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFee_perMin]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFee_perMin]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 1].Columns[TotalFees]"
+                      cachedDataType="numeric"
+                      cachedName="TotalFees"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[TotalFees]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[TotalFees]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -410,7 +451,6 @@
                       refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 2].Columns[Time]"
                       cachedDataType="dbTime2"
                       cachedName="Time"
-                      cachedScale="7"
                       lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Time]">
                       <properties>
                         <property
@@ -493,16 +533,58 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 2].Columns[CallFees_perMin]"
-                      cachedDataType="cy"
-                      cachedName="CallFees_perMin"
-                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFees_perMin]">
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 2].Columns[Service_Level_Agreement]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="Service_Level_Agreement"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Service_Level_Agreement]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFees_perMin]}</property>
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[Service_Level_Agreement]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 2].Columns[SourceName]"
+                      cachedDataType="nText"
+                      cachedName="SourceName"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[SourceName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 2].Columns[CallFee_perMin]"
+                      cachedDataType="cy"
+                      cachedName="CallFee_perMin"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFee_perMin]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFee_perMin]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 2].Columns[TotalFees]"
+                      cachedDataType="numeric"
+                      cachedName="TotalFees"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[TotalFees]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[TotalFees]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -543,8 +625,7 @@
                       refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[Time]"
                       dataType="dbTime2"
                       lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[Time]"
-                      name="Time"
-                      scale="7" />
+                      name="Time" />
                     <outputColumn
                       refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[EmployeeID]"
                       codePage="1252"
@@ -578,15 +659,281 @@
                       name="CallAbandoned"
                       precision="18" />
                     <outputColumn
-                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFees_perMin]"
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[Service_Level_Agreement]"
+                      dataType="wstr"
+                      length="11"
+                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[Service_Level_Agreement]"
+                      name="Service_Level_Agreement" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[SourceName]"
+                      dataType="nText"
+                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[SourceName]"
+                      name="SourceName" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFee_perMin]"
                       dataType="cy"
-                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFees_perMin]"
-                      name="CallFees_perMin" />
+                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFee_perMin]"
+                      name="CallFee_perMin" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[TotalFees]"
+                      dataType="numeric"
+                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[TotalFees]"
+                      name="TotalFees"
+                      precision="18"
+                      scale="2" />
                     <outputColumn
                       refId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[EmployeeSurrKey]"
                       dataType="i4"
                       lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[EmployeeSurrKey]"
                       name="EmployeeSurrKey" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="CSPT - Calls with date unmatching file date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Inputs[Conditional Split Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Inputs[Conditional Split Input].Columns[SourceName]"
+                      cachedDataType="nText"
+                      cachedName="SourceName"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[CallDate vs FileDate mismatch]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="CallDate vs FileDate mismatch"
+                  synchronousInputId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[TRIM]((DT_WSTR,50)[YEAR](#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Date]})) != [TRIM]([SUBSTRING]((DT_WSTR,50)#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]},[FINDSTRING]((DT_WSTR,50)#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]}," ",1),5))</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">TRIM((DT_WSTR,50)YEAR(Date)) != TRIM(SUBSTRING((DT_WSTR,50)SourceName,FINDSTRING((DT_WSTR,50)SourceName," ",1),5))</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Call rows Rejects"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Inputs[Derived Column Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Inputs[Derived Column Input].Columns[SourceName]"
+                      cachedDataType="nText"
+                      cachedName="SourceName"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectDate]"
+                      name="RejectDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="205"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)@[System::PackageName] + " AND " + (DT_WSTR,100)@[System::TaskName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectColumn]"
+                      name="RejectColumn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Date"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Date"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="159"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectDescription]"
+                      name="RejectDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"The year date value" + (DT_WSTR,50)#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Date]} + "does not match with the year of the file" + (DT_WSTR,50)#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"The year date value" + (DT_WSTR,50)Date + "does not match with the year of the file" + (DT_WSTR,50)SourceName</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -747,7 +1094,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="10"
+                      length="255"
                       lineageId="Package\DFT - Fact Call_Data\DER- Employee Rejetcs.Outputs[Derived Column Output].Columns[RejectColumn]"
                       name="RejectColumn"
                       truncationRowDisposition="FailComponent">
@@ -756,13 +1103,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"EmployeeID"</property>
+                          name="Expression">#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[EmployeeID]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"EmployeeID"</property>
+                          name="FriendlyExpression">EmployeeID</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -779,13 +1126,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"The value" + #{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[EmployeeID]} + "does nor exist in the dimension table DimEmployee"</property>
+                          name="Expression">"The value" + #{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[EmployeeID]} + "does not exist in the dimension table DimEmployee"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"The value" + EmployeeID + "does nor exist in the dimension table DimEmployee"</property>
+                          name="FriendlyExpression">"The value" + EmployeeID + "does not exist in the dimension table DimEmployee"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -873,7 +1220,7 @@ where [refTable].[Date] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Date]};</property>
+                  name="ParameterMap">#{Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[Date]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1025,12 +1372,12 @@ where [refTable].[EmployeeID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeSurrKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Site" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateCD" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeSurrKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Employee LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FullName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Manager LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Site" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[EmployeeID]};</property>
+                  name="ParameterMap">#{Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[Time]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1171,6 +1518,44 @@ where [refTable].[EmployeeID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\DFT - Fact Call_Data\MLT - For date verification"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="MLT - For date verification">
+              <inputs>
+                <input
+                  refId="Package\DFT - Fact Call_Data\MLT - For date verification.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Fact Call_Data\MLT - For date verification.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DFT - Fact Call_Data\MLT - For date verification.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Fact Call_Data\MLT - For date verification.Outputs[Multicast Output 4]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 4"
+                  synchronousInputId="Package\DFT - Fact Call_Data\MLT - For date verification.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Fact Call_Data\MLT - For date verification.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DFT - Fact Call_Data\MLT - For date verification.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1247,34 +1632,34 @@ where [refTable].[EmployeeID] = ?</property>
                       cachedDataType="dbTimeStamp"
                       cachedName="RejectDate"
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDate]"
-                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectDate]" />
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDate]" />
                     <inputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].Columns[RejectPackageAndTask]"
                       cachedDataType="wstr"
                       cachedLength="205"
                       cachedName="RejectPackageAndTask"
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectPackageAndTask]"
-                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectPackageAndTask]" />
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectPackageAndTask]" />
                     <inputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].Columns[RejectColumn]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="RejectColumn"
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectColumn]"
-                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectColumn]" />
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectColumn]" />
                     <inputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].Columns[RejectDescription]"
                       cachedDataType="wstr"
                       cachedLength="313"
                       cachedName="RejectDescription"
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].ExternalColumns[RejectDescription]"
-                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectDescription]" />
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDescription]" />
                     <inputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].Columns[Count all]"
                       cachedDataType="ui8"
                       cachedName="Count all"
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Occurrences]"
-                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[Count all]" />
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[Count all]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1429,30 +1814,11 @@ where [refTable].[EmployeeID] = ?</property>
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
                       lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallAbandoned]" />
                     <inputColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].Columns[CallFees_perMin]"
-                      cachedDataType="cy"
-                      cachedName="CallFees_perMin"
-                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallFees_perMin]"
-                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[CallFees_perMin]" />
-                    <inputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].Columns[CallDateKey]"
                       cachedDataType="i4"
                       cachedName="CallDateKey"
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDateKey]"
                       lineageId="Package\DFT - Fact Call_Data\LKP - DimDate.Outputs[Lookup Match Output].Columns[CallDateKey]" />
-                    <inputColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].Columns[Time]"
-                      cachedDataType="dbTime2"
-                      cachedName="Time"
-                      cachedScale="7"
-                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTime]"
-                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[Time]" />
-                    <inputColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].Columns[EmployeeSurrKey]"
-                      cachedDataType="i4"
-                      cachedName="EmployeeSurrKey"
-                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeSKey]"
-                      lineageId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1].Columns[EmployeeSurrKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1460,15 +1826,6 @@ where [refTable].[EmployeeID] = ?</property>
                       refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallDateKey]"
                       dataType="i4"
                       name="CallDateKey" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTime]"
-                      dataType="dbTime2"
-                      name="CallTime"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeSKey]"
-                      dataType="i4"
-                      name="EmployeeSKey" />
                     <externalMetadataColumn
                       refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallTypeLabel]"
                       codePage="1252"
@@ -1491,9 +1848,36 @@ where [refTable].[EmployeeID] = ?</property>
                       name="CallAbandoned"
                       precision="18" />
                     <externalMetadataColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallFees_perMin]"
+                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
+                      dataType="dbTime2"
+                      name="Time" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeSurrKey]"
+                      dataType="i4"
+                      name="EmployeeSurrKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[CallFee_perMin]"
                       dataType="cy"
-                      name="CallFees_perMin" />
+                      name="CallFee_perMin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[TotalFees]"
+                      dataType="numeric"
+                      name="TotalFees"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[Service_Level_Agreement]"
+                      dataType="wstr"
+                      length="11"
+                      name="Service_Level_Agreement" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="nText"
+                      name="SourceName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1600,7 +1984,6 @@ where [refTable].[EmployeeID] = ?</property>
                       externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[Time]"
                       lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Time]"
                       name="Time"
-                      scale="7"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[EmployeeID]"
@@ -1655,13 +2038,43 @@ where [refTable].[EmployeeID] = ?</property>
                       precision="18"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFees_perMin]"
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Service_Level_Agreement]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[Service_Level_Agreement]"
+                      length="11"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[Service_Level_Agreement]"
+                      name="Service_Level_Agreement"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[SourceName]"
+                      name="SourceName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFee_perMin]"
                       dataType="cy"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[CallFees_perMin]"
-                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFees_perMin]"
-                      name="CallFees_perMin"
+                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[CallFee_perMin]"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[CallFee_perMin]"
+                      name="CallFee_perMin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[TotalFees]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[TotalFees]"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].Columns[TotalFees]"
+                      name="TotalFees"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1673,8 +2086,7 @@ where [refTable].[EmployeeID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[Time]"
                       dataType="dbTime2"
-                      name="Time"
-                      scale="7" />
+                      name="Time" />
                     <externalMetadataColumn
                       refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
                       codePage="1252"
@@ -1703,9 +2115,24 @@ where [refTable].[EmployeeID] = ?</property>
                       name="CallAbandoned"
                       precision="18" />
                     <externalMetadataColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[CallFees_perMin]"
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[Service_Level_Agreement]"
+                      dataType="wstr"
+                      length="11"
+                      name="Service_Level_Agreement" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
+                      dataType="nText"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[CallFee_perMin]"
                       dataType="cy"
-                      name="CallFees_perMin" />
+                      name="CallFee_perMin" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output].ExternalColumns[TotalFees]"
+                      dataType="numeric"
+                      name="TotalFees"
+                      precision="18"
+                      scale="2" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1713,6 +2140,18 @@ where [refTable].[EmployeeID] = ?</property>
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                     <outputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[Date]"
                       dataType="dbDate"
@@ -1722,8 +2161,7 @@ where [refTable].[EmployeeID] = ?</property>
                       refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[Time]"
                       dataType="dbTime2"
                       lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[Time]"
-                      name="Time"
-                      scale="7" />
+                      name="Time" />
                     <outputColumn
                       refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
                       codePage="1252"
@@ -1757,22 +2195,220 @@ where [refTable].[EmployeeID] = ?</property>
                       name="CallAbandoned"
                       precision="18" />
                     <outputColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[CallFees_perMin]"
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[Service_Level_Agreement]"
+                      dataType="wstr"
+                      length="11"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[Service_Level_Agreement]"
+                      name="Service_Level_Agreement" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[SourceName]"
+                      dataType="nText"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[SourceName]"
+                      name="SourceName" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[CallFee_perMin]"
                       dataType="cy"
-                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[CallFees_perMin]"
-                      name="CallFees_perMin" />
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[CallFee_perMin]"
+                      name="CallFee_perMin" />
                     <outputColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
+                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[TotalFees]"
+                      dataType="numeric"
+                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[TotalFees]"
+                      name="TotalFees"
+                      precision="18"
+                      scale="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Fact Call_Data\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 1].Columns[RejectDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RejectDate"
+                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 1].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 1].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 1].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="313"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 1].Columns[Count all]"
+                      cachedDataType="ui8"
+                      cachedName="Count all"
+                      lineageId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1].Columns[Count all]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[Count all]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 2].Columns[RejectDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RejectDate"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 2].Columns[RejectPackageAndTask]"
+                      cachedDataType="wstr"
+                      cachedLength="205"
+                      cachedName="RejectPackageAndTask"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectPackageAndTask]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectPackageAndTask]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 2].Columns[RejectColumn]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="RejectColumn"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 2].Columns[RejectDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="159"
+                      cachedName="RejectDescription"
+                      lineageId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output].Columns[RejectDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
+                      refId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDate]"
+                      name="RejectDate" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectPackageAndTask]"
+                      dataType="wstr"
+                      length="205"
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectPackageAndTask]"
+                      name="RejectPackageAndTask" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectColumn]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectColumn]"
+                      name="RejectColumn" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDescription]"
+                      dataType="wstr"
+                      length="313"
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[RejectDescription]"
+                      name="RejectDescription" />
+                    <outputColumn
+                      refId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[Count all]"
+                      dataType="ui8"
+                      lineageId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1].Columns[Count all]"
+                      name="Count all" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1782,19 +2418,29 @@ where [refTable].[EmployeeID] = ?</property>
           <paths>
             <path
               refId="Package\DFT - Fact Call_Data.Paths[Aggregate Output 1]"
-              endId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 1]"
               name="Aggregate Output 1"
               startId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Outputs[Aggregate Output 1]" />
             <path
+              refId="Package\DFT - Fact Call_Data.Paths[CallDate vs FileDate mismatch]"
+              endId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Inputs[Derived Column Input]"
+              name="CallDate vs FileDate mismatch"
+              startId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Outputs[CallDate vs FileDate mismatch]" />
+            <path
               refId="Package\DFT - Fact Call_Data.Paths[Derived Column Output]"
+              endId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact Call_Data\DER- Employee Rejetcs.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact Call_Data.Paths[Derived Column Output1]"
               endId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Inputs[Union All Input 2]"
               name="Derived Column Output"
               startId="Package\DFT - Fact Call_Data\DER - Tag Employee As -1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Fact Call_Data.Paths[Derived Column Output1]"
-              endId="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects.Inputs[Aggregate Input 1]"
+              refId="Package\DFT - Fact Call_Data.Paths[Derived Column Output2]"
+              endId="Package\DFT - Fact Call_Data\Union All.Inputs[Union All Input 2]"
               name="Derived Column Output"
-              startId="Package\DFT - Fact Call_Data\DER- Employee Rejetcs.Outputs[Derived Column Output]" />
+              startId="Package\DFT - Fact Call_Data\DER - Call rows Rejects.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Fact Call_Data.Paths[Lookup Match Output]"
               endId="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data.Inputs[OLE DB Destination Input]"
@@ -1816,13 +2462,23 @@ where [refTable].[EmployeeID] = ?</property>
               name="Multicast Output 1"
               startId="Package\DFT - Fact Call_Data\MLT - Employee Not Found.Outputs[Multicast Output 1]" />
             <path
+              refId="Package\DFT - Fact Call_Data.Paths[Multicast Output 11]"
+              endId="Package\DFT - Fact Call_Data\LKP - DimEmployee_Employee ID.Inputs[Lookup Input]"
+              name="Multicast Output 1"
+              startId="Package\DFT - Fact Call_Data\MLT - For date verification.Outputs[Multicast Output 1]" />
+            <path
               refId="Package\DFT - Fact Call_Data.Paths[Multicast Output 2]"
               endId="Package\DFT - Fact Call_Data\DER- Employee Rejetcs.Inputs[Derived Column Input]"
               name="Multicast Output 2"
               startId="Package\DFT - Fact Call_Data\MLT - Employee Not Found.Outputs[Multicast Output 2]" />
             <path
+              refId="Package\DFT - Fact Call_Data.Paths[Multicast Output 21]"
+              endId="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date.Inputs[Conditional Split Input]"
+              name="Multicast Output 2"
+              startId="Package\DFT - Fact Call_Data\MLT - For date verification.Outputs[Multicast Output 2]" />
+            <path
               refId="Package\DFT - Fact Call_Data.Paths[OLE DB Source Output]"
-              endId="Package\DFT - Fact Call_Data\LKP - DimEmployee_Employee ID.Inputs[Lookup Input]"
+              endId="Package\DFT - Fact Call_Data\MLT - For date verification.Inputs[Multicast Input 1]"
               name="OLE DB Source Output"
               startId="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data.Outputs[OLE DB Source Output]" />
             <path
@@ -1830,6 +2486,11 @@ where [refTable].[EmployeeID] = ?</property>
               endId="Package\DFT - Fact Call_Data\LKP - DimDate.Inputs[Lookup Input]"
               name="Union All Output 1"
               startId="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\DFT - Fact Call_Data.Paths[Union All Output 11]"
+              endId="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\DFT - Fact Call_Data\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1858,49 +2519,117 @@ where [refTable].[EmployeeID] = ?</property>
     design-time-name="Package\DFT - Fact Call_Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="238,42"
-          Id="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data"
-          TopLeft="681.333333333333,567" />
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="215,42"
           Id="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data"
-          TopLeft="697,22" />
+          TopLeft="689,20" />
         <NodeLayout
-          Size="152,42"
-          Id="Package\DFT - Fact Call_Data\LKP - DimDate"
-          TopLeft="725.833333333333,434.5" />
-        <NodeLayout
-          Size="214,42"
-          Id="Package\DFT - Fact Call_Data\MLT - Employee Not Found"
-          TopLeft="1068.5,198.5" />
+          Size="291,42"
+          Id="Package\DFT - Fact Call_Data\CSPT - Calls with date unmatching file date"
+          TopLeft="973.5,104.5" />
         <NodeLayout
           Size="211,42"
           Id="Package\DFT - Fact Call_Data\DER - Tag Employee As -1"
-          TopLeft="1063.5,291.5" />
+          TopLeft="1037.5,300.5" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\DFT - Fact Call_Data\MLT - Employee Not Found"
+          TopLeft="1042.5,207.5" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DFT - Fact Call_Data\LKP - DimDate"
+          TopLeft="725.833333333333,441.5" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data"
+          TopLeft="681.333333333333,603" />
         <NodeLayout
           Size="197,42"
-          Id="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey"
-          TopLeft="696.833333333333,319.5" />
+          Id="Package\DFT - Fact Call_Data\DER- Employee Rejetcs"
+          TopLeft="1385.25,204.5" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\DFT - Fact Call_Data\DER - Call rows Rejects"
+          TopLeft="1392,103" />
         <NodeLayout
           Size="247,42"
           Id="Package\DFT - Fact Call_Data\LKP - DimEmployee_Employee ID"
-          TopLeft="676.833333333333,207.5" />
+          TopLeft="675.833333333333,214.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects"
+          TopLeft="1614.52380952381,345.857142857143" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects"
+          TopLeft="1627.33333333333,207" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\DFT - Fact Call_Data\MLT - For date verification"
+          TopLeft="695.5,108.5" />
         <EdgeLayout
-          Id="Package\DFT - Fact Call_Data.Paths[Union All Output 1]"
-          TopLeft="798.583333333333,361.5">
+          Id="Package\DFT - Fact Call_Data.Paths[OLE DB Source Output]"
+          TopLeft="797.75,62">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73"
+              EndConnector="0,46.5"
               Start="0,0"
-              End="0,65.5">
+              End="0,39">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.5" />
+                    End="0,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.92765625,13.87841796875,55.8553125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Multicast Output 21]"
+          TopLeft="902.5,127.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71,0"
+              Start="0,0"
+              End="63.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.82234374999999,5,55.8553125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Multicast Output 2]"
+          TopLeft="1256.5,227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.75,0"
+              Start="0,0"
+              End="121.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="121.25,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1910,30 +2639,32 @@ where [refTable].[EmployeeID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Fact Call_Data.Paths[OLE DB Source Output]"
-          TopLeft="802.416666666667,64">
+          Id="Package\DFT - Fact Call_Data.Paths[Multicast Output 11]"
+          TopLeft="799.166666666667,150.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,143.5"
+              EndConnector="0,64"
               Start="0,0"
-              End="0,136">
+              End="0,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,136" />
+                    End="0,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-27.92765625,22.62841796875,55.8553125,11.2431640625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Fact Call_Data.Paths[Multicast Output 1]"
-          TopLeft="1172.25,240.5">
+          TopLeft="1146.25,249.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1955,120 +2686,96 @@ where [refTable].[EmployeeID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Fact Call_Data.Paths[Lookup No Match Output]"
-          TopLeft="923.833333333333,228.5">
+          TopLeft="922.833333333333,232">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="144.666666666667,-9"
+              EndConnector="119.666666666667,0"
               Start="0,0"
-              End="137.166666666667,-9">
+              End="112.166666666667,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="68.3333333333333,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.3333333333333,0"
-                    Point2="72.3333333333333,0"
-                    Point3="72.3333333333333,-4" />
-                  <mssgle:LineSegment
-                    End="72.3333333333333,-5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="72.3333333333333,-5"
-                    Point2="72.3333333333333,-9"
-                    Point3="76.3333333333333,-9" />
-                  <mssgle:LineSegment
-                    End="137.166666666667,-9" />
+                    End="112.166666666667,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="16.5269466145833,1,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Fact Call_Data.Paths[Lookup Match Output1]"
-          TopLeft="797.833333333333,249.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,25.4453125,96.3827734375,11.609375"
+              BoundingBox="0.276946614583487,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Fact Call_Data.Paths[Lookup Match Output]"
-          TopLeft="801.083333333333,476.5">
+          TopLeft="801.083333333333,483.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,90.5"
+              EndConnector="0,119.5"
               Start="0,0"
-              End="0,83">
+              End="0,112">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,83" />
+                    End="0,112" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,35.6953125,96.3827734375,11.609375"
+              BoundingBox="-80.51173828125,50.1953125,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Fact Call_Data.Paths[Derived Column Output]"
-          TopLeft="1063.5,312.5">
+          TopLeft="1582.25,226.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-169.666666666667,28"
+              EndConnector="45.0833333333301,0"
               Start="0,0"
-              End="-162.166666666667,28">
+              End="37.5833333333301,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-80.8333333333333,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-80.8333333333333,0"
-                    Point2="-84.8333333333333,0"
-                    Point3="-84.8333333333333,4" />
-                  <mssgle:LineSegment
-                    End="-84.8333333333333,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-84.8333333333333,24"
-                    Point2="-84.8333333333333,28"
-                    Point3="-88.8333333333333,28" />
-                  <mssgle:LineSegment
-                    End="-162.166666666667,28" />
+                    End="37.5833333333301,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[CallDate vs FileDate mismatch]"
+          TopLeft="1264.5,124.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.5,0"
+              Start="0,0"
+              End="120,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="120,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.17945312500001,5,134.35890625,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
@@ -2077,157 +2784,270 @@ where [refTable].[EmployeeID] = ?</property>
           FontInfo="{assembly:Null}"
           Size="219,40"
           Id="210ba819-5ee7-4055-b589-037e2d060cad"
-          TopLeft="314,22" />
+          TopLeft="314,29" />
         <AnnotationLayout
           Text="2-  We are going to compare ou DimTable with our FactTable. See if the Employee ID we have on the ODS Call_Data table&#xA;exists in the DWH Employee table,&#xA;then if yes, retrieve the employee surrogate key from DWH Dim_Employee table,&#xA;and add this Employee surrogate key as a new column to DWH CAll_Data&#xA;&#xA;Note as we are working with SCD 1 - the EmployeeID (the initial primary key) will not be duplicated."
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
           Size="668,120"
           Id="07165584-3db1-45a9-802e-21f418b5c94c"
-          TopLeft="200.666666666667,97" />
+          TopLeft="37.666666666667,103" />
         <AnnotationLayout
           Text="3 - We are going to compare ou DimTable with our FactTable. &#xA;Match the Date column we have in ODS Call_Date with the Date in the DimDate table.&#xA;Retrieve the DatePK  from DWH DimDate table,&#xA;and add this Date Primary Key as a new column named CallDateKey to DWH CAll_Data&#xA;"
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
           Size="486,104"
           Id="4e84c1f7-c0f9-40b5-9fe3-6b7ad0a50d6f"
-          TopLeft="321,398" />
+          TopLeft="227.666666666667,395" />
         <AnnotationLayout
           Text="4 - Create destination table DWH_Call_Data&#xA;Keeping Employee surrogate key instead of the Employee ID key&#xA;Keeping the new CallDateKey instead of the "
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
           Size="370,72"
           Id="4061ebcb-e36f-4cd7-9246-de6fe15f3aa3"
-          TopLeft="319,533" />
+          TopLeft="319,540" />
         <AnnotationLayout
-          Text="5/6 - If the employeeID we have in the ODS Call Data Table does not exist in our DWH DimEMployee table, &#xA;(meaning that we have no Employee surrogate Key value to retrieve)&#xD;&#xA; then in exchange we will just return a &quot;-1&quot; in the column&#xD;&#xA;&#xD;&#xA;We will also keep track of all these EmployeeID we could not find with step 8 and 9"
+          Text="5/6 - If the employeeID we have in the ODS Call Data Table does not exist in our DWH DimEMployee table, &#xA;(meaning that we have no Employee surrogate Key value to retrieve)&#xA; then in exchange we will just return a &quot;-1&quot; in the column&#xA;&#xA;We will also keep track of all these EmployeeID we could not find with step 8 and 9"
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
           Size="596,104"
           Id="5c4cda56-7a29-4dab-95d3-c6b7c5de342e"
-          TopLeft="1022.5,333.75" />
+          TopLeft="996.5,342.75" />
         <AnnotationLayout
           Text="7 - We then do a union with all the employee surrogate keys :&#xA;the one that had a surrogate key value and the one that did not have one &#xA;and for which we return -1"
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
           Size="421,72"
           Id="6a8ac7d6-576e-477d-9e7a-24beadb504f6"
-          TopLeft="274,263" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\DFT - Fact Call_Data\DER- Employee Rejetcs"
-          TopLeft="1411.25,195.5" />
-        <EdgeLayout
-          Id="Package\DFT - Fact Call_Data.Paths[Multicast Output 2]"
-          TopLeft="1282.5,218">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="128.75,0"
-              Start="0,0"
-              End="121.25,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="121.25,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="274,270" />
         <AnnotationLayout
-          Text="8- We collect all employeeID that was not found in DimEmployee&#xD;&#xA;to store them in a table so we can be informed about the data&#xD;&#xA;on which there was a functional problem"
+          Text="8- We collect all employeeID that was not found in DimEmployee&#xA;to store them in a table so we can be informed about the data&#xA;on which there was a functional problem"
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
           Size="373,72"
           Id="a0216d06-cd1d-4857-a5fa-6713d1b602b3"
-          TopLeft="1290,106" />
+          TopLeft="1315,245" />
         <AnnotationLayout
-          Text="9 -We aggregate the Rejects because each time a transaction will occur with an EmployeeID&#xD;&#xA; that was not found we will have a row (see image below). &#xD;&#xA;But we just want know which EmployeeID was not found, so duplicates is of no use.&#xD;&#xA;&#xD;&#xA;So we group by this with an Aggregate Task&#xD;&#xA;And we also select the count to know the numer of occurrence of each situation &#xD;&#xA;"
+          Text="9 -We aggregate the Rejects because each time a transaction will occur with an EmployeeID&#xA; that was not found we will have a row (see image below). &#xA;But we just want know which EmployeeID was not found, so duplicates is of no use.&#xA;&#xA;So we group by this with an Aggregate Task&#xA;And we also select the count to know the numer of occurrence of each situation &#xA;"
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
           Size="513,136"
           Id="038985c3-09f3-433b-857e-e74f4667b27d"
-          TopLeft="1710,50" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\DFT - Fact Call_Data\AGG - All EmployeeID Rejects"
-          TopLeft="1708.33333333333,195" />
-        <EdgeLayout
-          Id="Package\DFT - Fact Call_Data.Paths[Derived Column Output1]"
-          TopLeft="1608.25,216.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.083333333333,0"
-              Start="0,0"
-              End="92.5833333333335,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="92.5833333333335,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="260,42"
-          Id="Package\DFT - Fact Call_Data\OLE_DST - ADM Functional_Rejects"
-          TopLeft="1689.52380952381,337.857142857143" />
-        <EdgeLayout
-          Id="Package\DFT - Fact Call_Data.Paths[Aggregate Output 1]"
-          TopLeft="1820.92857142857,237">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,100.857142857143"
-              Start="0,0"
-              End="0,93.3571428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,93.3571428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="1673,6.28571428571431" />
         <AnnotationLayout
           Text="10 - Setting up the destination for the EmployeeID Rejects in the ADM database"
           ParentId="Package\DFT - Fact Call_Data"
           FontInfo="{assembly:Null}"
-          Size="451,60"
+          Size="451,40"
           Id="46df592b-7c52-4b8c-98f8-f234500efcdc"
-          TopLeft="1650.71428571429,400" />
+          TopLeft="1575.71428571429,408" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\DFT - Fact Call_Data\ALL - EmployeeSurrKey"
+          TopLeft="711,315" />
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Lookup Match Output1]"
+          TopLeft="799.333333333333,256.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.166666666667,58.5"
+              Start="0,0"
+              End="10.166666666667,51">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.25"
+                    Point2="0,29.25"
+                    Point3="4,29.25" />
+                  <mssgle:LineSegment
+                    End="6.16666666666697,29.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.16666666666697,29.25"
+                    Point2="10.166666666667,29.25"
+                    Point3="10.166666666667,33.25" />
+                  <mssgle:LineSegment
+                    End="10.166666666667,51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-75.4284049479165,34.25,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Derived Column Output1]"
+          TopLeft="1037.5,321.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-129.5,14.5"
+              Start="0,0"
+              End="-122,14.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-60.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.75,0"
+                    Point2="-64.75,0"
+                    Point3="-64.75,4" />
+                  <mssgle:LineSegment
+                    End="-64.75,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.75,10.5"
+                    Point2="-64.75,14.5"
+                    Point3="-68.75,14.5" />
+                  <mssgle:LineSegment
+                    End="-122,14.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Union All Output 1]"
+          TopLeft="805.666666666667,357">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84.5"
+              Start="0,0"
+              End="0,77">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.92765625,32.87841796875,55.8553125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\DFT - Fact Call_Data\Union All"
+          TopLeft="1917,192" />
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Aggregate Output 1]"
+          TopLeft="1855.33333333333,228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.6666666666699,-15"
+              Start="0,0"
+              End="54.1666666666699,-15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.833333333335,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.833333333335,0"
+                    Point2="30.833333333335,0"
+                    Point3="30.833333333335,-4" />
+                  <mssgle:LineSegment
+                    End="30.833333333335,-11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.833333333335,-11"
+                    Point2="30.833333333335,-15"
+                    Point3="34.833333333335,-15" />
+                  <mssgle:LineSegment
+                    End="54.1666666666699,-15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Derived Column Output2]"
+          TopLeft="1490.5,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="488,47"
+              Start="0,0"
+              End="488,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="484,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="484,23.5"
+                    Point2="488,23.5"
+                    Point3="488,27.5" />
+                  <mssgle:LineSegment
+                    End="488,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Fact Call_Data.Paths[Union All Output 11]"
+          TopLeft="1978.5,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-233.97619047619,111.857142857143"
+              Start="0,0"
+              End="-233.97619047619,104.357142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.9285714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.9285714285715"
+                    Point2="0,55.9285714285715"
+                    Point3="-4,55.9285714285715" />
+                  <mssgle:LineSegment
+                    End="-229.97619047619,55.9285714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-229.97619047619,55.9285714285715"
+                    Point2="-233.97619047619,55.9285714285715"
+                    Point3="-233.97619047619,59.9285714285715" />
+                  <mssgle:LineSegment
+                    End="-233.97619047619,104.357142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT - Fact Call_Data\OLE_SRC - ODS Call_Data">
     <Properties>
@@ -2261,6 +3081,19 @@ where [refTable].[EmployeeID] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Fact Call_Data\OLE_DST - DWH FactCall_Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

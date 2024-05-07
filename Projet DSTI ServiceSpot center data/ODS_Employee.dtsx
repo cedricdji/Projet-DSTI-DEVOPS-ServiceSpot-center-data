@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="70"
-  DTS:VersionGUID="{117B6380-1C08-4AC6-8872-8F24A369D1A7}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{AFA30015-82F9-4BA9-AE71-5DAD7CA42E86}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -384,27 +384,6 @@
                       cachedName="ManagerName"
                       lineageId="Package\DFT - ODS Employee\OLE_SRC - STA Employee.Outputs[OLE DB Source Output].Columns[ManagerName]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[StateCD_str]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="StateCD_str"
-                      lineageId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output].Columns[StateCD_str]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[StateName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="StateName"
-                      lineageId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[StateName]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[Region]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Region"
-                      lineageId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[Region]" />
-                    <inputColumn
                       refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[Employee FirstName_str]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -532,72 +511,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[StateCD_str_R]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="2"
-                      lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[StateCD_str_R]"
-                      name="StateCD_str_R"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output].Columns[StateCD_str]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[StateName_R]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[StateName_R]"
-                      name="StateName_R"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[StateName]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[Region_R]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[Region_R]"
-                      name="Region_R"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[Region]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[Employee FirstName_R]"
                       codePage="1252"
                       dataType="str"
@@ -705,167 +618,6 @@
                       refId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS Employee\DCNV - StateCD into String"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="DCNV - StateCD into String"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS Employee\DCNV - StateCD into String.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - StateCD into String.Inputs[Data Conversion Input].Columns[StateCD]"
-                      cachedDataType="wstr"
-                      cachedLength="2"
-                      cachedName="StateCD"
-                      lineageId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Output].Columns[StateCD]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\DFT - ODS Employee\DCNV - StateCD into String.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output].Columns[StateCD_str]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output].Columns[StateCD_str]"
-                      name="StateCD_str"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Output].Columns[StateCD]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\DFT - ODS Employee\DCNV - StateCD into String.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT - ODS Employee\DER - Add StateCD column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="DER - Add StateCD column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS Employee\DER - Add StateCD column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\DER - Add StateCD column.Inputs[Derived Column Input].Columns[Site]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Site"
-                      lineageId="Package\DFT - ODS Employee\OLE_SRC - STA Employee.Outputs[OLE DB Source Output].Columns[Site]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\DFT - ODS Employee\DER - Add StateCD column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Output].Columns[StateCD]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="2"
-                      lineageId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Output].Columns[StateCD]"
-                      name="StateCD"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[RIGHT](#{Package\DFT - ODS Employee\OLE_SRC - STA Employee.Outputs[OLE DB Source Output].Columns[Site]},2)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">RIGHT(Site,2)</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\DFT - ODS Employee\DER - Add StateCD column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1206,184 +958,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Employee\LKP - StateCD"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="LKP - StateCD"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[US_States]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[US_States]) [refTable]
-where [refTable].[StateCD] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateCD" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output].Columns[StateCD_str]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DFT - ODS Employee\LKP - StateCD.Connections[OleDbConnection]"
-                  connectionManagerID="{F1035C42-23F7-4EC5-BAF7-E2044A5F35A1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_STA]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\DFT - ODS Employee\LKP - StateCD.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\LKP - StateCD.Inputs[Lookup Input].Columns[StateCD_str]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="StateCD_str"
-                      lineageId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output].Columns[StateCD_str]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">StateCD</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\DFT - ODS Employee\LKP - StateCD.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[StateName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="255"
-                      lineageId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[StateName]"
-                      name="StateName"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">Name</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[Region]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="255"
-                      lineageId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output].Columns[Region]"
-                      name="Region"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">Region</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\DFT - ODS Employee\LKP - StateCD.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\DFT - ODS Employee\LKP - StateCD.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DFT - ODS Employee\OLE_DST- ODS Employee"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1519,30 +1093,6 @@ where [refTable].[StateCD] = ?</property>
                       cachedName="Site_R"
                       externalMetadataColumnId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                       lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[Site_R]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].Columns[StateCD_str_R]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="2"
-                      cachedName="StateCD_str_R"
-                      externalMetadataColumnId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[StateCD]"
-                      lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[StateCD_str_R]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].Columns[StateName_R]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="StateName_R"
-                      externalMetadataColumnId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
-                      lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[StateName_R]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].Columns[Region_R]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Region_R"
-                      externalMetadataColumnId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
-                      lineageId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output].Columns[Region_R]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1594,24 +1144,6 @@ where [refTable].[StateCD] = ?</property>
                       dataType="str"
                       length="50"
                       name="Site" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[StateCD]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="StateCD" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="StateName" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Region" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1828,32 +1360,27 @@ where [refTable].[StateCD] = ?</property>
           <paths>
             <path
               refId="Package\DFT - ODS Employee.Paths[Data Conversion Output]"
-              endId="Package\DFT - ODS Employee\LKP - StateCD.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\DFT - ODS Employee\DCNV - StateCD into String.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output1]"
               endId="Package\DFT - ODS Employee\OLE_DST- ODS Employee.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Employee\DCNV - Resizing columns.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output2]"
+              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output1]"
               endId="Package\DFT - ODS Employee\DCNV - Employee LastName into string.Inputs[Data Conversion Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Employee\DCNV - Employee FirstName into string.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output3]"
+              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output2]"
               endId="Package\DFT - ODS Employee\DCNV - Manager FirstName into string.Inputs[Data Conversion Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Employee\DCNV - Employee LastName into string.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output4]"
+              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output3]"
               endId="Package\DFT - ODS Employee\DCNV - Manager LastName into string.Inputs[Data Conversion Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Employee\DCNV - Manager FirstName into string.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output5]"
-              endId="Package\DFT - ODS Employee\DCNV - StateCD into String.Inputs[Data Conversion Input]"
+              refId="Package\DFT - ODS Employee.Paths[Data Conversion Output4]"
+              endId="Package\DFT - ODS Employee\DCNV - Resizing columns.Inputs[Data Conversion Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Employee\DCNV - Manager LastName into string.Outputs[Data Conversion Output]" />
             <path
@@ -1873,19 +1400,9 @@ where [refTable].[StateCD] = ?</property>
               startId="Package\DFT - ODS Employee\DER - Manager FirstName.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - ODS Employee.Paths[Derived Column Output3]"
-              endId="Package\DFT - ODS Employee\DER - Add StateCD column.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - ODS Employee\DER - Manager LastName.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - ODS Employee.Paths[Derived Column Output4]"
               endId="Package\DFT - ODS Employee\DCNV - Employee FirstName into string.Inputs[Data Conversion Input]"
               name="Derived Column Output"
-              startId="Package\DFT - ODS Employee\DER - Add StateCD column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - ODS Employee.Paths[Lookup Match Output]"
-              endId="Package\DFT - ODS Employee\DCNV - Resizing columns.Inputs[Data Conversion Input]"
-              name="Lookup Match Output"
-              startId="Package\DFT - ODS Employee\LKP - StateCD.Outputs[Lookup Match Output]" />
+              startId="Package\DFT - ODS Employee\DER - Manager LastName.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - ODS Employee.Paths[OLE DB Source Output]"
               endId="Package\DFT - ODS Employee\DER - Employee FirstName.Inputs[Derived Column Input]"
@@ -1972,35 +1489,15 @@ where [refTable].[StateCD] = ?</property>
     design-time-name="Package\DFT - ODS Employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="213,42"
-          Id="Package\DFT - ODS Employee\OLE_SRC - STA Employee"
-          TopLeft="68,174" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="267,42"
           Id="Package\DFT - ODS Employee\DCNV - Manager LastName into string"
           TopLeft="56,488" />
         <NodeLayout
-          Size="208,42"
-          Id="Package\DFT - ODS Employee\DER - Manager LastName"
-          TopLeft="1035,177" />
-        <NodeLayout
           Size="214,42"
-          Id="Package\DFT - ODS Employee\DER - Add StateCD column"
-          TopLeft="1268,180" />
-        <NodeLayout
-          Size="267,42"
-          Id="Package\DFT - ODS Employee\DCNV - Manager FirstName into string"
-          TopLeft="59,413" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\DFT - ODS Employee\DER - Manager FirstName"
-          TopLeft="796,176" />
-        <NodeLayout
-          Size="214,42"
-          Id="Package\DFT - ODS Employee\DCNV - StateCD into String"
-          TopLeft="85,569" />
+          Id="Package\DFT - ODS Employee\DER - Employee FirstName"
+          TopLeft="313,179.111111111111" />
         <NodeLayout
           Size="272,42"
           Id="Package\DFT - ODS Employee\DCNV - Employee LastName into string"
@@ -2010,149 +1507,33 @@ where [refTable].[StateCD] = ?</property>
           Id="Package\DFT - ODS Employee\DER - Employee LastName"
           TopLeft="556.888888888889,177" />
         <NodeLayout
-          Size="211,42"
-          Id="Package\DFT - ODS Employee\OLE_DST- ODS Employee"
-          TopLeft="770,650" />
+          Size="208,42"
+          Id="Package\DFT - ODS Employee\DER - Manager LastName"
+          TopLeft="1035,177" />
         <NodeLayout
           Size="206,42"
           Id="Package\DFT - ODS Employee\DCNV - Resizing columns"
           TopLeft="453.5,647.5" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\DFT - ODS Employee\LKP - StateCD"
-          TopLeft="109.5,653.5" />
+          Size="267,42"
+          Id="Package\DFT - ODS Employee\DCNV - Manager FirstName into string"
+          TopLeft="59,413" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\DFT - ODS Employee\DER - Manager FirstName"
+          TopLeft="796,176" />
         <NodeLayout
           Size="273,42"
           Id="Package\DFT - ODS Employee\DCNV - Employee FirstName into string"
           TopLeft="51,250" />
         <NodeLayout
-          Size="214,42"
-          Id="Package\DFT - ODS Employee\DER - Employee FirstName"
-          TopLeft="313,179.111111111111" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[OLE DB Source Output]"
-          TopLeft="281,197.555555555555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32,0"
-              Start="0,0"
-              End="24.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="24.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Lookup Match Output]"
-          TopLeft="260.5,671.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="193,0"
-              Start="0,0"
-              End="185.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="185.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="44.55861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Derived Column Output4]"
-          TopLeft="1375,222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-1187.5,28"
-              Start="0,0"
-              End="-1187.5,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="-4,14" />
-                  <mssgle:LineSegment
-                    End="-1183.5,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-1183.5,14"
-                    Point2="-1187.5,14"
-                    Point3="-1187.5,18" />
-                  <mssgle:LineSegment
-                    End="-1187.5,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Derived Column Output3]"
-          TopLeft="1243,199.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25,0"
-              Start="0,0"
-              End="17.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="17.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Derived Column Output2]"
-          TopLeft="1005,197.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="30,0"
-              Start="0,0"
-              End="22.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="22.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="211,42"
+          Id="Package\DFT - ODS Employee\OLE_DST- ODS Employee"
+          TopLeft="770,650" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\DFT - ODS Employee\OLE_SRC - STA Employee"
+          TopLeft="68,174" />
         <EdgeLayout
           Id="Package\DFT - ODS Employee.Paths[Derived Column Output1]"
           TopLeft="770.888888888889,197.5">
@@ -2198,19 +1579,31 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output5]"
-          TopLeft="190.75,530">
+          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output4]"
+          TopLeft="189.5,530">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="367,117.5"
               Start="0,0"
-              End="0,31.5">
+              End="367,110">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,54.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.75"
+                    Point2="0,58.75"
+                    Point3="4,58.75" />
+                  <mssgle:LineSegment
+                    End="363,58.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="363,58.75"
+                    Point2="367,58.75"
+                    Point3="367,62.75" />
+                  <mssgle:LineSegment
+                    End="367,110" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2220,7 +1613,7 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output4]"
+          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output3]"
           TopLeft="191,455">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2242,7 +1635,7 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output3]"
+          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output2]"
           TopLeft="191.75,369">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2264,7 +1657,7 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output2]"
+          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output1]"
           TopLeft="189.25,292">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2286,7 +1679,7 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output1]"
+          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output]"
           TopLeft="659.5,669.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2304,25 +1697,79 @@ where [refTable].[StateCD] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="43.5,5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - ODS Employee.Paths[Data Conversion Output]"
-          TopLeft="188.5,611">
+          Id="Package\DFT - ODS Employee.Paths[OLE DB Source Output]"
+          TopLeft="281,197.555555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.5"
+              EndConnector="32,0"
               Start="0,0"
-              End="0,35">
+              End="24.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35" />
+                    End="24.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Employee.Paths[Derived Column Output3]"
+          TopLeft="1139,219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-951.5,31"
+              Start="0,0"
+              End="-951.5,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="-4,15.5" />
+                  <mssgle:LineSegment
+                    End="-947.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-947.5,15.5"
+                    Point2="-951.5,15.5"
+                    Point3="-951.5,19.5" />
+                  <mssgle:LineSegment
+                    End="-951.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Employee.Paths[Derived Column Output2]"
+          TopLeft="1005,197.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30,0"
+              Start="0,0"
+              End="22.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2332,12 +1779,12 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="Add 5 new columns: &#xD;&#xA;-empFN/EmpLN by splitting the Emp column&#xD;&#xA;-manFN/ManLN by splitting the Manager column&#xD;&#xA;-stateCD by extracting two last letters from Site column"
+          Text="Add 5 new columns: &#xA;-empFN/EmpLN by splitting the Emp column&#xA;-manFN/ManLN by splitting the Manager column&#xA;-stateCD by extracting two last letters from Site column"
           ParentId="Package\DFT - ODS Employee"
           FontInfo="{assembly:Null}"
           Size="322,88"
           Id="f7a97fb6-16a5-4a17-8bb9-2eb75cfc238b"
-          TopLeft="416,82" />
+          TopLeft="576,247" />
         <AnnotationLayout
           Text="Convert the 5 new columns into string : &#xA;-empFN/EmpLN &#xA;-manFN/ManLN &#xA;-stateCD "
           ParentId="Package\DFT - ODS Employee"
@@ -2356,19 +1803,6 @@ where [refTable].[StateCD] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Employee\OLE_SRC - STA Employee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DFT - ODS Employee\OLE_DST- ODS Employee">
     <Properties>
       <Property>
@@ -2382,25 +1816,15 @@ where [refTable].[StateCD] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Employee\LKP - StateCD">
+    design-time-name="Package\DFT - ODS Employee\OLE_SRC - STA Employee">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[US_States]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
