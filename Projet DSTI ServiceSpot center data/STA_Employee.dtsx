@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_cedric"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{48D790F0-3AE3-4770-8D2F-D5E2A2A9B447}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{3FD0DBFC-6113-44CE-B869-5FEB5F82CB8E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -507,21 +507,21 @@
         <NodeLayout
           Size="208,42"
           Id="Package\SQL - TRUNCATE TABLE"
-          TopLeft="205,85" />
+          TopLeft="205,88" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="309.75,127">
+          TopLeft="309.75,130">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,100"
+              EndConnector="0,97"
               Start="0,0"
-              End="0,92.5">
+              End="0,89.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,92.5" />
+                    End="0,89.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
