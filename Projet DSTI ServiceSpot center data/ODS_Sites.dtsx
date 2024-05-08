@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Sites"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{FA5D54BC-F0EB-4270-AEF0-53439D2EAE0B}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{3B7212E4-DFB9-494E-828F-67D397970419}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -147,23 +147,26 @@
                       cachedName="Site"
                       lineageId="Package\ODS - Sites\AGG - SItes.Outputs[Aggregate Output 1].Columns[Site]" />
                     <inputColumn
-                      refId="Package\ODS - Sites\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[StateCode]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="StateCode"
-                      lineageId="Package\ODS - Sites\DER - StateCode.Outputs[Derived Column Output].Columns[StateCode]" />
-                    <inputColumn
                       refId="Package\ODS - Sites\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[Region]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="255"
                       cachedName="Region"
                       lineageId="Package\ODS - Sites\LKP - STA US_States.Outputs[Lookup Match Output].Columns[Region]" />
                     <inputColumn
                       refId="Package\ODS - Sites\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[StateName]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="255"
                       cachedName="StateName"
                       lineageId="Package\ODS - Sites\LKP - STA US_States.Outputs[Lookup Match Output].Columns[StateName]" />
+                    <inputColumn
+                      refId="Package\ODS - Sites\DCNV - Resizing columns.Inputs[Data Conversion Input].Columns[StateCode_str]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StateCode_str"
+                      lineageId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output].Columns[StateCode_str]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -210,7 +213,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\ODS - Sites\DER - StateCode.Outputs[Derived Column Output].Columns[StateCode]}</property>
+                          name="SourceInputColumnLineageID">#{Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output].Columns[StateCode_str]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -279,6 +282,84 @@
                       refId="Package\ODS - Sites\DCNV - Resizing columns.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\ODS - Sites\DCNV - Resizing columns.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ODS - Sites\DCNV - StateCode into string"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DCNV - StateCode into string"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ODS - Sites\DCNV - StateCode into string.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ODS - Sites\DCNV - StateCode into string.Inputs[Data Conversion Input].Columns[StateCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="StateCode"
+                      lineageId="Package\ODS - Sites\DER - StateCode.Outputs[Derived Column Output].Columns[StateCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ODS - Sites\DCNV - StateCode into string.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output].Columns[StateCode_str]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output].Columns[StateCode_str]"
+                      name="StateCode_str"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ODS - Sites\DER - StateCode.Outputs[Derived Column Output].Columns[StateCode]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ODS - Sites\DCNV - StateCode into string.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -421,12 +502,12 @@ where [refTable].[StateCD] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateCD" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Region" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateCD" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\ODS - Sites\DER - StateCode.Outputs[Derived Column Output].Columns[StateCode]};</property>
+                  name="ParameterMap">#{Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output].Columns[StateCode_str]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -450,11 +531,12 @@ where [refTable].[StateCD] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\ODS - Sites\LKP - STA US_States.Inputs[Lookup Input].Columns[StateCode]"
-                      cachedDataType="wstr"
+                      refId="Package\ODS - Sites\LKP - STA US_States.Inputs[Lookup Input].Columns[StateCode_str]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="StateCode"
-                      lineageId="Package\ODS - Sites\DER - StateCode.Outputs[Derived Column Output].Columns[StateCode]">
+                      cachedName="StateCode_str"
+                      lineageId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output].Columns[StateCode_str]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -480,7 +562,8 @@ where [refTable].[StateCD] = ?</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\ODS - Sites\LKP - STA US_States.Outputs[Lookup Match Output].Columns[Region]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="255"
                       lineageId="Package\ODS - Sites\LKP - STA US_States.Outputs[Lookup Match Output].Columns[Region]"
@@ -495,7 +578,8 @@ where [refTable].[StateCD] = ?</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\ODS - Sites\LKP - STA US_States.Outputs[Lookup Match Output].Columns[StateName]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="255"
                       lineageId="Package\ODS - Sites\LKP - STA US_States.Outputs[Lookup Match Output].Columns[StateName]"
@@ -837,8 +921,13 @@ where [refTable].[StateCD] = ?</property>
               name="Data Conversion Output"
               startId="Package\ODS - Sites\DCNV - Resizing columns.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\ODS - Sites.Paths[Derived Column Output]"
+              refId="Package\ODS - Sites.Paths[Data Conversion Output1]"
               endId="Package\ODS - Sites\LKP - STA US_States.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\ODS - Sites\DCNV - StateCode into string.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ODS - Sites.Paths[Derived Column Output]"
+              endId="Package\ODS - Sites\DCNV - StateCode into string.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\ODS - Sites\DER - StateCode.Outputs[Derived Column Output]" />
             <path
@@ -948,11 +1037,11 @@ where [refTable].[StateCD] = ?</property>
         <NodeLayout
           Size="186,42"
           Id="Package\ODS - Sites\LKP - STA US_States"
-          TopLeft="145,300" />
+          TopLeft="149,381" />
         <NodeLayout
           Size="190,42"
           Id="Package\ODS - Sites\OLE_DST - ODS Sites"
-          TopLeft="153,489" />
+          TopLeft="157,570" />
         <NodeLayout
           Size="164,42"
           Id="Package\ODS - Sites\DER - StateCode"
@@ -964,7 +1053,7 @@ where [refTable].[StateCD] = ?</property>
         <NodeLayout
           Size="206,42"
           Id="Package\ODS - Sites\DCNV - Resizing columns"
-          TopLeft="139,398" />
+          TopLeft="143,479" />
         <NodeLayout
           Size="219,42"
           Id="Package\ODS - Sites\OLE_SRC - STA Employees"
@@ -993,7 +1082,7 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\ODS - Sites.Paths[Lookup Match Output]"
-          TopLeft="240,342">
+          TopLeft="244,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1016,30 +1105,8 @@ where [refTable].[StateCD] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ODS - Sites.Paths[Derived Column Output]"
-          TopLeft="239,252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\ODS - Sites.Paths[Data Conversion Output]"
-          TopLeft="245,440">
+          TopLeft="249,521">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1081,6 +1148,78 @@ where [refTable].[StateCD] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="222,42"
+          Id="Package\ODS - Sites\DCNV - StateCode into string"
+          TopLeft="143,297" />
+        <EdgeLayout
+          Id="Package\ODS - Sites.Paths[Derived Column Output]"
+          TopLeft="240,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14,45"
+              Start="0,0"
+              End="14,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="10,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,22.5"
+                    Point2="14,22.5"
+                    Point3="14,26.5" />
+                  <mssgle:LineSegment
+                    End="14,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ODS - Sites.Paths[Data Conversion Output1]"
+          TopLeft="254,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12,42"
+              Start="0,0"
+              End="-12,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-8,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,21"
+                    Point2="-12,21"
+                    Point3="-12,25" />
+                  <mssgle:LineSegment
+                    End="-12,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1090,7 +1229,7 @@ where [refTable].[StateCD] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1100,7 +1239,7 @@ where [refTable].[StateCD] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

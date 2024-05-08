@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DWH_Sites"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{96418B8D-A549-475F-9A49-AF9ED627BEEB}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{4588C567-9AAD-43FE-BFD2-1A0EA0F2B98C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -525,11 +525,11 @@ where [refTable].[Site] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites"
+              refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE_DST - DWH Sites"
+              name="OLE_DST - DWH DimSites"
               usesDispositions="true"
               version="4">
               <properties>
@@ -582,7 +582,7 @@ where [refTable].[Site] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Connections[OleDbConnection]"
+                  refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Connections[OleDbConnection]"
                   connectionManagerID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}:external"
                   connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -590,64 +590,64 @@ where [refTable].[Site] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input]"
+                  refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].Columns[Site]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].Columns[Site]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Site"
-                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                       lineageId="Package\DFT - DWH Sites\OLE_SRC - ODS Sites.Outputs[OLE DB Source Output].Columns[Site]" />
                     <inputColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].Columns[StateName]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].Columns[StateName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="StateName"
-                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
                       lineageId="Package\DFT - DWH Sites\OLE_SRC - ODS Sites.Outputs[OLE DB Source Output].Columns[StateName]" />
                     <inputColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].Columns[StateCode]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].Columns[StateCode]"
                       cachedDataType="wstr"
                       cachedLength="2"
                       cachedName="StateCode"
-                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
                       lineageId="Package\DFT - DWH Sites\OLE_SRC - ODS Sites.Outputs[OLE DB Source Output].Columns[StateCode]" />
                     <inputColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].Columns[Region]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].Columns[Region]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Region"
-                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      externalMetadataColumnId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
                       lineageId="Package\DFT - DWH Sites\OLE_SRC - ODS Sites.Outputs[OLE DB Source Output].Columns[Region]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[SiteSurrKey]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[SiteSurrKey]"
                       dataType="i4"
                       name="SiteSurrKey" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                       dataType="wstr"
                       length="50"
                       name="Site" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
                       dataType="wstr"
                       length="50"
                       name="StateName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
                       dataType="wstr"
                       length="2"
                       name="StateCode" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
                       dataType="wstr"
                       length="50"
                       name="Region" />
@@ -656,22 +656,22 @@ where [refTable].[Site] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -860,7 +860,7 @@ where [refTable].[Site] = ?</property>
               startId="Package\DFT - DWH Sites\LKP - Site.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - DWH Sites.Paths[Lookup No Match Output]"
-              endId="Package\DFT - DWH Sites\OLE_DST - DWH Sites.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT - DWH Sites\OLE_DST - DWH DimSites.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\DFT - DWH Sites\LKP - Site.Outputs[Lookup No Match Output]" />
             <path
@@ -903,9 +903,9 @@ where [refTable].[Site] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="192,42"
-          Id="Package\DFT - DWH Sites\OLE_DST - DWH Sites"
-          TopLeft="248,380" />
+          Size="212,42"
+          Id="Package\DFT - DWH Sites\OLE_DST - DWH DimSites"
+          TopLeft="237,380" />
         <NodeLayout
           Size="254,42"
           Id="Package\DFT - DWH Sites\LKP - Any changes on existing sites"
@@ -994,7 +994,7 @@ where [refTable].[Site] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - DWH Sites.Paths[Lookup No Match Output]"
-          TopLeft="344,244">
+          TopLeft="343.5,244">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1056,7 +1056,7 @@ where [refTable].[Site] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - DWH Sites\OLE_DST - DWH Sites">
+    design-time-name="Package\DFT - DWH Sites\OLE_DST - DWH DimSites">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

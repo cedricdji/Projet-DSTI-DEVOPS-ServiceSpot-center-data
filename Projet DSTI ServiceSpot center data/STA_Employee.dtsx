@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="STA_cedric"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{70441508-83E1-4ED7-B5C2-F165E28B1126}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{48D790F0-3AE3-4770-8D2F-D5E2A2A9B447}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

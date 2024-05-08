@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DWH_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{E6DED09D-9D5A-40D1-A638-6D71BBA8E17A}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{D2F46AC1-BAFC-443A-A107-7726CAB4AD62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -680,11 +680,11 @@ where [refTable].[EmployeeID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee"
+              refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE_DST - DWH Employee"
+              name="OLE_DST - DWH DimEmployee"
               usesDispositions="true"
               version="4">
               <properties>
@@ -737,7 +737,7 @@ where [refTable].[EmployeeID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Connections[OleDbConnection]"
+                  refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Connections[OleDbConnection]"
                   connectionManagerID="{DCE695A7-0D55-4C98-A6BF-073609EEAC23}:external"
                   connectionManagerRefId="Project.ConnectionManagers[WIN-PCIE5VFO92P.ETL_PROJECT_DWH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -745,127 +745,127 @@ where [refTable].[EmployeeID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input]"
+                  refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="EmployeeID"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[Employee FullName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[Employee FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Employee FullName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FullName]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FullName]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee FullName]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[Employee FirstName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[Employee FirstName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Employee FirstName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FirstName]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FirstName]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee FirstName]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[Employee LastName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[Employee LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Employee LastName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Employee LastName]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Employee LastName]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Employee LastName]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[Manager FullName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[Manager FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Manager FullName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FullName]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FullName]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager FullName]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[Manager FirstName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[Manager FirstName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Manager FirstName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FirstName]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FirstName]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager FirstName]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[Manager LastName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[Manager LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Manager LastName"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Manager LastName]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Manager LastName]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Manager LastName]" />
                     <inputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].Columns[Site]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].Columns[Site]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Site"
-                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                      externalMetadataColumnId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                       lineageId="Package\DFT - DimEmployee\OLE_SRC - ODS Employee.Outputs[OLE DB Source Output].Columns[Site]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeSurrKey]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeSurrKey]"
                       dataType="i4"
                       name="EmployeeSurrKey" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="EmployeeID" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FullName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FullName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Employee FullName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FirstName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Employee FirstName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Employee FirstName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Employee LastName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Employee LastName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Employee LastName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FullName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FullName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Manager FullName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FirstName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Manager FirstName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Manager FirstName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Manager LastName]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Manager LastName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Manager LastName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -875,22 +875,22 @@ where [refTable].[EmployeeID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1187,7 +1187,7 @@ where [refTable].[EmployeeID] = ?</property>
               startId="Package\DFT - DimEmployee\LKP - EmployeeID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - DimEmployee.Paths[Lookup No Match Output]"
-              endId="Package\DFT - DimEmployee\OLE_DST - DWH Employee.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\DFT - DimEmployee\LKP - EmployeeID.Outputs[Lookup No Match Output]" />
             <path
@@ -1220,7 +1220,7 @@ where [refTable].[EmployeeID] = ?</property>
         <NodeLayout
           Size="178,42"
           Id="Package\DFT - DimEmployee"
-          TopLeft="242,187" />
+          TopLeft="156,179" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1230,8 +1230,8 @@ where [refTable].[EmployeeID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="217,42"
-          Id="Package\DFT - DimEmployee\OLE_DST - DWH Employee"
+          Size="236,42"
+          Id="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee"
           TopLeft="106,391" />
         <NodeLayout
           Size="325,42"
@@ -1251,7 +1251,7 @@ where [refTable].[EmployeeID] = ?</property>
           TopLeft="576,167" />
         <EdgeLayout
           Id="Package\DFT - DimEmployee.Paths[Lookup No Match Output]"
-          TopLeft="217,213">
+          TopLeft="221.75,213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1363,7 +1363,7 @@ where [refTable].[EmployeeID] = ?</property>
           FontInfo="{assembly:Null}"
           Size="345,72"
           Id="c8127c2a-5eb5-489f-bde8-353a1056848f"
-          TopLeft="326,375" />
+          TopLeft="382,376" />
         <AnnotationLayout
           Text="4 - If the EmployeeID is found, then the employee already exist in the DWH&#xA;So we now have to verify if there was any change in the employee information &#xA;&#xA;We compare each column from ODS Employee to its matching column in DWH Employee"
           ParentId="Package\DFT - DimEmployee"
@@ -1395,7 +1395,7 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - DimEmployee\OLE_DST - DWH Employee">
+    design-time-name="Package\DFT - DimEmployee\OLE_DST - DWH DimEmployee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

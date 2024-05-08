@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Call Charges"
   DTS:PackageType="5"
-  DTS:VersionBuild="121"
-  DTS:VersionGUID="{011362E5-9528-40AC-817F-D38956818C8A}">
+  DTS:VersionBuild="122"
+  DTS:VersionGUID="{B63FBBE8-E672-42DD-A97E-45BEA6205BA7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -224,7 +224,7 @@
                       refId="Package\DFT - ODS Call Charges\ALL - Rejects.Inputs[Union All Input 2].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output].Columns[ErrorCode]">
+                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output].Columns[ErrorCode]">
                       <properties>
                         <property
                           containsID="true"
@@ -237,7 +237,7 @@
                       refId="Package\DFT - ODS Call Charges\ALL - Rejects.Inputs[Union All Input 2].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output].Columns[ErrorColumn]">
+                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output].Columns[ErrorColumn]">
                       <properties>
                         <property
                           containsID="true"
@@ -572,19 +572,19 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Call Charges\DCNV - Year into intger"
+              refId="Package\DFT - ODS Call Charges\DCNV - Year into integer"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
-              name="DCNV - Year into intger"
+              name="DCNV - Year into integer"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Inputs[Data Conversion Input]"
+                  refId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Inputs[Data Conversion Input].Columns[Year]"
+                      refId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Inputs[Data Conversion Input].Columns[Year]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Year"
@@ -595,17 +595,17 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Output]"
+                  refId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Output].Columns[Year_int]"
+                      refId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Output].Columns[Year_int]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
-                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Output].Columns[Year_int]"
+                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Output].Columns[Year_int]"
                       name="Year_int"
                       truncationRowDisposition="RedirectRow">
                       <properties>
@@ -624,22 +624,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output]"
+                  refId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1846,17 +1846,17 @@
               refId="Package\DFT - ODS Call Charges.Paths[Data Conversion Error Output1]"
               endId="Package\DFT - ODS Call Charges\DER - Year rejects.Inputs[Derived Column Input]"
               name="Data Conversion Error Output"
-              startId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Error Output]" />
+              startId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Error Output]" />
             <path
               refId="Package\DFT - ODS Call Charges.Paths[Data Conversion Output]"
-              endId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Inputs[Data Conversion Input]"
+              endId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Inputs[Data Conversion Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Call Charges\DCNV - Call per min into currency.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - ODS Call Charges.Paths[Data Conversion Output1]"
               endId="Package\DFT - ODS Call Charges\OLE_DST - ODS Call Charges.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\DFT - ODS Call Charges\DCNV - Year into intger.Outputs[Data Conversion Output]" />
+              startId="Package\DFT - ODS Call Charges\DCNV - Year into integer.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - ODS Call Charges.Paths[Derived Column Output]"
               endId="Package\DFT - ODS Call Charges\DER - Year (yyyy) column.Inputs[Derived Column Input]"
@@ -1991,7 +1991,7 @@
         <NodeLayout
           Size="229,42"
           Id="Package\DFT - ODS Call Charges\OLE_DST - ODS Call Charges"
-          TopLeft="54,490" />
+          TopLeft="63,492" />
         <NodeLayout
           Size="206,42"
           Id="Package\DFT - ODS Call Charges\DER - Call per min rejects"
@@ -2025,27 +2025,31 @@
           Id="Package\DFT - ODS Call Charges\OLE_DST - ADM Rejects"
           TopLeft="1097,314" />
         <NodeLayout
-          Size="194,42"
-          Id="Package\DFT - ODS Call Charges\DCNV - Year into intger"
+          Size="200,42"
+          Id="Package\DFT - ODS Call Charges\DCNV - Year into integer"
           TopLeft="76.5,376.5" />
         <NodeLayout
           Size="206,42"
           Id="Package\DFT - ODS Call Charges\DER - Year (yyyy) column"
           TopLeft="321,179" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\DFT - ODS Call Charges\ALL - Rejects"
+          TopLeft="744,312" />
         <EdgeLayout
           Id="Package\DFT - ODS Call Charges.Paths[Data Conversion Output1]"
-          TopLeft="171,418.5">
+          TopLeft="177,418.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71.5"
+              EndConnector="0,73.5"
               Start="0,0"
-              End="0,64">
+              End="0,66">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64" />
+                    End="0,66" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2056,7 +2060,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call Charges.Paths[Data Conversion Output]"
-          TopLeft="174.25,302">
+          TopLeft="175.75,302">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2078,25 +2082,25 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call Charges.Paths[Data Conversion Error Output1]"
-          TopLeft="270.5,394.75">
+          TopLeft="276.5,394.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="240.5,0"
+              EndConnector="234.5,0"
               Start="0,0"
-              End="233,0">
+              End="227,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="233,0" />
+                    End="227,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="50.41361328125,5,132.1727734375,11.43359375"
+              BoundingBox="47.41361328125,5,132.1727734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2150,6 +2154,28 @@
                     Point3="-713,34.25" />
                   <mssgle:LineSegment
                     End="-713,53" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call Charges.Paths[Union All Output 1]"
+          TopLeft="889,334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="208,0"
+              Start="0,0"
+              End="200.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="200.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2214,6 +2240,74 @@
             <mssgm:EdgeLabel
               BoundingBox="40.532421875,5,73.93515625,11.2822265625"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call Charges.Paths[Derived Column Output4]"
+          TopLeft="681,392">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,-53.3333333333333"
+              Start="0,0"
+              End="55.5,-53.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.4128440366973,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.4128440366973,0"
+                    Point2="36.4128440366973,0"
+                    Point3="36.4128440366973,-4" />
+                  <mssgle:LineSegment
+                    End="36.4128440366973,-49.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.4128440366973,-49.3333333333333"
+                    Point2="36.4128440366973,-53.3333333333333"
+                    Point3="40.4128440366973,-53.3333333333333" />
+                  <mssgle:LineSegment
+                    End="55.5,-53.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call Charges.Paths[Derived Column Output3]"
+          TopLeft="704.5,287.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.5,39.8333333333333"
+              Start="0,0"
+              End="32,39.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.8302752293578,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.8302752293578,0"
+                    Point2="22.8302752293578,0"
+                    Point3="22.8302752293578,4" />
+                  <mssgle:LineSegment
+                    End="22.8302752293578,35.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.8302752293578,35.8333333333333"
+                    Point2="22.8302752293578,39.8333333333333"
+                    Point3="26.8302752293578,39.8333333333333" />
+                  <mssgle:LineSegment
+                    End="32,39.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2322,100 +2416,6 @@
           Size="613,72"
           Id="efe4cb6c-6174-4134-8d16-4379de1d9985"
           TopLeft="778,345" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\DFT - ODS Call Charges\ALL - Rejects"
-          TopLeft="744,312" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call Charges.Paths[Derived Column Output3]"
-          TopLeft="704.5,287.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="39.5,39.8333333333333"
-              Start="0,0"
-              End="32,39.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.8302752293578,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.8302752293578,0"
-                    Point2="22.8302752293578,0"
-                    Point3="22.8302752293578,4" />
-                  <mssgle:LineSegment
-                    End="22.8302752293578,35.8333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.8302752293578,35.8333333333333"
-                    Point2="22.8302752293578,39.8333333333333"
-                    Point3="26.8302752293578,39.8333333333333" />
-                  <mssgle:LineSegment
-                    End="32,39.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call Charges.Paths[Derived Column Output4]"
-          TopLeft="681,392">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="63,-53.3333333333333"
-              Start="0,0"
-              End="55.5,-53.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="32.4128440366973,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="32.4128440366973,0"
-                    Point2="36.4128440366973,0"
-                    Point3="36.4128440366973,-4" />
-                  <mssgle:LineSegment
-                    End="36.4128440366973,-49.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="36.4128440366973,-49.3333333333333"
-                    Point2="36.4128440366973,-53.3333333333333"
-                    Point3="40.4128440366973,-53.3333333333333" />
-                  <mssgle:LineSegment
-                    End="55.5,-53.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Call Charges.Paths[Union All Output 1]"
-          TopLeft="889,334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="208,0"
-              Start="0,0"
-              End="200.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="200.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
